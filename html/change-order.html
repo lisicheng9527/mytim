@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	    <title>农卖通</title>
+	    <script src="js/mui.min.js"></script>
+	    <link href="css/mui.min.css" rel="stylesheet"/>
+	    <link rel="stylesheet" type="text/css" href="css/icons-extra.css" />
+	    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_8cwla4jskmdyrpb9.css" />
+	    <style>
+		    *{margin: 0;padding: 0;}
+	    	li{list-style-type: none;}
+	    	h1,h2,h3,h4,h5,h6{margin: 0;}
+		    body{
+	    		width: 100%;
+	    		max-width: 640px;
+	    		min-width: 300px;
+	    		margin: 0 auto;
+	    		background-color: #fff;
+	    		padding-top: 58px;
+	    		font-family: 'Microsoft Yahei';
+	    	}
+	    	.mui-bar{
+	    		height: auto;
+	    		padding: 6px 10px;
+	    	}
+	    	.mui-action-back{
+	    		color: #888;
+	    	}
+			
+			.search-con{
+				padding: 20px 15px;
+				margin-top: 10px;
+			}
+			.search-con h4{
+				font-weight: normal;
+				font-size: 16px;
+				color: #6d6d6d;
+			}
+			.search-con ul{
+				margin-top: 20px;
+				display: flex;
+			}
+			.search-con ul li{
+				width: 100%;
+				padding: 5px 0;
+				position: relative;
+				text-align: center;
+				border: 1px solid #8c8c8c;
+				border-radius: 20px;
+			}
+			.search-con ul li.active{
+				background-color: #FFF2F2;
+				border-color: #FFF2F2;
+			}
+			.search-con ul li .close{
+				position: absolute;
+				top: -10px;
+				right: 2px;
+				color: #B2AAAB;
+			}
+			.search-con ul li:nth-child(2){
+				margin: 0 15px;
+			}
+			.search-con li a{
+				display: block;
+				color: #8c8c8c;
+				width: 100%;
+				font-size: 14px;
+			}
+			.add-type{
+				width: 10.5rem;
+				height: 2.75rem;
+				margin: 0 auto;
+				line-height: 2.75rem;
+				text-align: center;
+				background-color: #FF4141;
+				display: block;
+				color: #fff;
+				margin-top: 20px;
+				border-radius: 5px;
+			}
+	    </style>
+	    <script type="text/javascript">
+	    	(function(win,doc){
+	    		var docEle = doc.documentElement,
+	    		reEvent = 'orientation' in win ? 'orientation' : 'resize',
+	    		reCalc = function(){
+	    			var clientW = docEle.getBoundingClientRect().width;
+	    			if(clientW>640){clientW=640;}
+	    			docEle.style.fontSize = clientW/32+'px';
+	    		};
+	    		
+	    		if(!doc.addEventListener)return;
+	    		win.addEventListener(reEvent,reCalc);
+	    		doc.addEventListener('DOMContentLoaded',reCalc,false);
+	    	})(window,document);
+	    </script>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">更改订阅</h1>
+		</header>
+		
+		<div class="search-con">
+			<h4><span class="iconfont icon-yixuan" style="color:#FE4141;margin-right: 5px;"></span>已选品类</h4>
+			<ul>
+				<li class="active"><a href="">苹果</a><span class="iconfont icon-shanchuwenzi close"></span></li>
+				<li class="active"><a href="">全部</a><span class="iconfont icon-shanchuwenzi close"></span></li>
+				<li style="border: none;"><a href=""></a></li>
+			</ul>
+		</div>
+		<div class="search-con">
+			<h4><span class="iconfont icon-remen" style="color:#FE4141;margin-right: 5px;"></span>热搜品类</h4>
+			<ul>
+				<li><a href="">全部</a></li>
+				<li><a href="">红富士</a></li>
+				<li><a href="">西夏苹果</a></li>
+			</ul>
+			<ul>
+				<li><a href="">洛川苹果</a></li>
+				<li><a href="">黄元帅苹果</a></li>
+				<li><a href="">红富士</a></li>
+			</ul>
+		</div>
+		<a href="#" class="add-type">+ 添加品类</a>
+	</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	    <title>农卖通</title>
+	    <script src="../js/mui.min.js"></script>
+	    <link href="../css/mui.min.css" rel="stylesheet"/>
+	    <link rel="stylesheet" type="text/css" href="css/icons-extra.css" />
+	    <style>
+		    *{margin: 0;padding: 0;}
+	    	li{list-style-type: none;}
+	    	h1,h2,h3,h4,h5,h6{margin: 0;}
+		    body{
+	    		width: 100%;
+	    		max-width: 640px;
+	    		min-width: 300px;
+	    		margin: 0 auto;
+	    		background-color: #fff;
+	    		padding-bottom: 50px;
+	    		padding-top: 58px;
+	    		font-family: 'Microsoft Yahei';
+	    	}
+	    	.iconfont {
+				font-family: "iconfont" !important;
+				font-size: 14px;
+				font-style: normal;
+				-webkit-font-smoothing: antialiased;
+				-webkit-text-stroke-width: 0.2px;
+				-moz-osx-font-smoothing: grayscale;
+			}
+			.mui-slider-indicator .mui-indicator{
+				box-shadow: none;
+				-webkit-box-shadow: none;
+			}
+			.topBar {
+				width: 100%;
+				max-width: 640px;
+				min-width: 300px;
+				position: fixed;
+				top: 0;
+				border-bottom: 1px solid #ccc;
+				z-index: 200;
+				padding:10px 0;
+				background-color: #F5F5F5;
+			}
+			.topBar .iconTxt{
+				padding: 0;
+				text-align: center;
+				color: #797979;
+				font-size: 16px;
+			}
+			
+			.topBar .searchBox{
+				height: 38px;
+				margin: 0 50px 0 40px;
+				position:relative;
+			}
+			
+			.searchBox .mui-icon{
+				position:absolute;
+				top:7px;
+				left:8px;
+				color:#888888;
+			}
+			
+			.scanBox {
+				position: absolute;
+				top: 18px;
+				left: 0;
+				width: 40px;
+				height: 30px;
+				text-align:center;
+			}
+			
+			.scanBox .mui-icon{
+				color: #797979;
+			}
+			
+			.scanBox .iconfont{
+				font-size:22px;
+				color:#fff;
+				display: inline-block;
+			}
+			
+			.menuBox {
+				position: absolute;
+				top: 18px;
+				right: 0;
+				width: 50px;
+				height: 30px;
+				text-align:center;
+			}
+			
+			.menuBox .mui-icon{
+				font-size:22px;
+				display:inline-block;
+				color:#fff;
+			}
+			
+			.searchBox .seaBtn{
+				height:100%;
+				padding:0;
+				border-radius:6px;
+				outline:none;
+				font-size:14px;
+				text-indent:40px;
+				border:none;
+				border: 1px solid #ccc;
+			}
+			
+			.search-con{
+				padding: 20px 15px;
+				margin-top: 10px;
+			}
+			.search-con h4{
+				font-weight: normal;
+				font-size: 16px;
+				color: #6d6d6d;
+			}
+			.search-con ul{
+				margin-top: 20px;
+				display: flex;
+			}
+			.search-con ul li{
+				width: 100%;
+				padding: 5px 0;
+				text-align: center;
+				border: 1px solid #8c8c8c;
+				border-radius: 20px;
+			}
+			.search-con ul li:nth-child(2){
+				margin: 0 15px;
+			}
+			.search-con li a{
+				display: block;
+				color: #8c8c8c;
+				width: 100%;
+				font-size: 14px;
+			}
+	    </style>
+	</head>
+	<body>
+		<div class="topBar">
+			<div class="scanBox">
+				<span class="mui-action-back mui-icon mui-icon-left-nav"></span>
+				<!--<p class="iconTxt">扫呀扫</p>-->
+			</div>
+			<div class="searchBox">
+				<input type="text" class="seaBtn" placeholder="请输入产品关键字或场地">
+				<span class="mui-icon mui-icon-search"></span>
+			</div>
+			<div class="menuBox">
+				<!--<span class="mui-icon mui-icon-bars"></span>-->
+				<p class="iconTxt">搜索</p>
+			</div>
+		</div>
+		
+		<div class="search-con">
+			<h4>历史搜索<span class="mui-icon mui-icon-trash mui-pull-right"></span></h4>
+			<ul>
+				<li><a href="">西瓜</a></li>
+				<li><a href="">栗子</a></li>
+				<li><a href="">哈密瓜</a></li>
+			</ul>
+			<ul>
+				<li><a href="">梨子</a></li>
+				<li><a href="">黄元帅苹果</a></li>
+				<li><a href="">红富士</a></li>
+			</ul>
+		</div>
+		<div class="search-con">
+			<h4>历史搜索</h4>
+			<ul>
+				<li><a href="">西瓜</a></li>
+				<li><a href="">栗子</a></li>
+				<li><a href="">哈密瓜</a></li>
+			</ul>
+			<ul>
+				<li><a href="">梨子</a></li>
+				<li><a href="">黄元帅苹果</a></li>
+				<li><a href="">红富士</a></li>
+			</ul>
+		</div>
+	</body>
+</html>

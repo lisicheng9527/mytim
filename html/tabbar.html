@@ -1,0 +1,46 @@
+<div class="mui-content" ui-view></div>
+<div class="fixed-bar" ng-if="info.nowPage=='home'" ng-class="{active:info.closeApp}">
+	<span class="mui-icon mui-icon-close close-btn"></span>
+	<div class="closeBar" ng-click="info.closeApp=true"></div>
+	<div class="app-intro">
+		<img src="images/logo.png" width="40" class="logo" />
+		<div class="introduce">
+			<p>打开农卖通APP 买卖更轻松</p>
+		</div>
+	</div>
+	<a href="https://api.mytim.cn/download.html" class="open-app">立即打开 &gt;&gt;</a>
+</div>
+<nav class="mui-bar mui-bar-tab">
+	<a class="nav-list" href="#html/tabbar/home" ng-class="{active:info.nowPage=='home'}">
+		<span class="mui-icon mui-icon-home"></span>
+		<span class="mui-tab-label">首页</span>
+	</a>
+	<a class="nav-list" href="#html/tabbar/shopping-cart" ng-class="{active:info.nowPage=='shopping'}">
+		<span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span class="mui-badge">2</span></span>
+		<span class="mui-tab-label">购物车</span>
+	</a>
+	<a class="nav-list" href="#html/tabbar/my-store" ng-class="{active:info.nowPage=='mine'}">
+		<span class="mui-icon mui-icon-person"></span>
+		<span class="mui-tab-label">我的</span>
+	</a>
+</nav>
+
+<!--
+	作者：793282773@qq.com
+	时间：2016-12-21
+	描述：指令
+-->
+
+<!--loading-->
+<div class="mui-mask" ng-if="info.showLoading">
+	<div class="load-content"><img src="images/rings.svg" width="100%"/><p>加载中...</p></div>
+</div>
+	
+<!--选择城市-->
+<city></city>
+
+<!--登录-->
+<login></login>
+
+<!--搜索-->
+<search></search>

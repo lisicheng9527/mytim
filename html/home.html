@@ -1,0 +1,120 @@
+<div class="home pagein">
+	<div id="slider" class="mui-slider">
+		<div class="mui-slider-group mui-slider-loop">
+			<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+			<div class="mui-slider-item mui-slider-item-duplicate">
+				<a href="{{banner[banner.length-1].url}}">
+					<img src="{{banner[banner.length-1].image.replace('https','http')}}">
+				</a>
+			</div>
+			<!-- 第一张 -->
+			<div class="mui-slider-item" ng-repeat="x in banner">
+				<a href="{{x.url}}">
+					<img src="{{shortUrl(x.image)}}">
+				</a>
+			</div>
+			<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+			<div class="mui-slider-item mui-slider-item-duplicate">
+				<a href="{{banner[0].url}}">
+					<img src="{{banner[0].image.replace('https','http')}}">
+				</a>
+			</div>
+		</div>
+	
+		<div class="mui-slider-indicator">
+			<div ng-repeat="x in banner" ng-class="{true:'mui-indicator mui-active',false:'mui-indicator'}[$first]"></div>
+		</div>
+	</div>
+	
+	<div class="topBar">
+		<div class="scanBox" ng-click="info.selectCity=true">
+			<span class="mui-icon mui-icon-location"></span><span style="color: #fff;font-size: 14px;position: relative;bottom: 1px;" ng-bind="cityName">城市</span>
+			<!--<p class="iconTxt">扫呀扫</p>-->
+		</div>
+		<div class="searchBox">
+			<a class="searPage"></a>
+			<input type="text" class="seaBtn" placeholder="请输入产品关键字或场地">
+			<span class="mui-icon mui-icon-search"></span>
+		</div>
+		<div class="menuBox" ng-click="info.showLogin=true">
+			<!--<span class="mui-icon mui-icon-bars"></span>-->
+			<p class="iconTxt">登录</p>
+		</div>
+		<div class="changeBg"></div>
+	</div>
+	
+	<div class="menu">
+		<ul id="menu-list">
+			<li ng-repeat="y in goodsType">
+				<a href="#classinfo" ng-click="info.categoryId=y.categoryId">
+					<img src="images/loading.gif" ng-src="{{shortUrl(y.thumbnail)}}" />
+					<p>{{y.categoryName}}</p>
+				</a>
+			</li>
+			<li class="all-type">
+				<a href="#">
+					<img src="images/type.png" id="typeImg" style="height: auto;" />
+					<p>所有分类</p>
+				</a>
+			</li>
+		</ul>
+	</div>
+	
+	<div class="advertisement">
+		<div class="adv-bar"><img src="images/section-bar.png" width="100%" /></div>
+		<div class="adv-pic"><img src="images/adv1.png"  ng-src="{{floorsBanner}}" width="100%" style="height: 1.5rem;" /></div>
+		
+		<div class="new-goods">
+			<div class="goods-list">
+				<ul>
+					<li ng-repeat="x in supply">
+						<a href="javascript:void(0);">
+							<img src="images/product1.png" ng-src="{{x.thumbnail}}" width="100%" />
+							<p>{{x.productName}}</p>
+							<span class="price">￥{{x.strikePrice}} <label>元/斤</label>
+							<!--<div class="tags">
+								<div class="tag-box">
+									<span>实力供应</span>
+								</div>
+							</div>-->
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="look-more">查看更多实力供应<img src="images/arrow.png" class="arrow" /></div>
+	</div>
+	
+	<div class="mui-slider" style="margin-top: 20px;">
+		<div class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+			<a class="controlItem" ng-repeat="key in baseInfo" ng-class="{active:now == $index}" ng-click="changeSupply($index)">
+				{{key.title}}
+			</a>
+		</div>
+		<div class="slide-group">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell mui-media" ng-repeat="x in baseSupply">
+					<a href="javascript:;">
+						<img class="mui-media-object mui-pull-left" src="{{x.thumbnail}}">
+						<div class="mui-media-body">
+							<h4 class="product-name">{{x.productName}}</h4>
+							<div class='new-price'>
+								￥{{x.strikePrice}}元/斤
+								<div class="arrival-date">
+									<span class="mui-ellipsis">1221到货</span>
+									<p class="sell-out">已售<span class="mui-ellipsis">20</span>件</p>
+								</div>
+							</div>
+							<span class="old-price">￥{{x.previousPrice}}元/斤</span>
+							<p class="small-icon">
+								<span class="iconfont icon-authentication" style="color: #B41C1C;"></span>
+								<span class="iconfont icon-baozhang" style="color: #009137;"></span>
+								<span class="iconfont icon-icon1" style="color: #f0ad4e;font-size: 18px;margin-left: 2px;"></span>
+							</p>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

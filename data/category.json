@@ -1,0 +1,395 @@
+{
+	"code": 0,
+	"msg": "操作成功",
+	"timestamp": "20170103110237",
+	"uuid": "ECC0320873B30285B7E9068A66902191",
+	"data": {
+		"banners": [],
+		"products": [
+			{
+				"agentType": 2,
+				"minoq": 1,
+				"shopName": "习大大",
+				"source": 1,
+				"categoryName": "白菜",
+				"productName": "水杯",
+				"addressId": 193,
+				"soldCount": 0,
+				"previousPrice": "55.00",
+				"isPresale": true,
+				"shopId": 54,
+				"stock": 5000,
+				"salesState": 0,
+				"thumbnail": "https://www.mytimcdn.com/ios/distribution/2.0.8/20161215/EC8A7A88074240A8A1E7895F4087550C.jpg/n11",
+				"productId": 624,
+				"salesDate": "2016-12-17",
+				"isExplosion": 0,
+				"maxoq": 2147483647,
+				"directSupply": 1,
+				"divisionCode": 430101,
+				"unit": "斤",
+				"netWeight": "1.0000",
+				"grossWeight": "1.0000",
+				"categoryId": 101127000,
+				"strikePrice": "55.00",
+				"status": 1,
+				"tags": [
+					{
+						"tagName": "补"
+					}
+				],
+				"productTags": [
+					{
+						"tagId": 3,
+						"tagName": "支持集采",
+						"tagImage": "https://www.mytimcdn.com/Storage/images/20161108/ab65e73ce15849f8bfcd93929666b2d0.png",
+						"target": "3"
+					}
+				]
+			}, {
+				"explosionPrice": "15.000",
+				"agentType": 2,
+				"minoq": 1,
+				"shopName": "习大大",
+				"source": 1,
+				"categoryName": "菜花",
+				"productName": "夕阳",
+				"addressId": 193,
+				"soldCount": 21,
+				"previousPrice": "25.00",
+				"isPresale": true,
+				"shopId": 54,
+				"stock": 479,
+				"salesState": 0,
+				"thumbnail": "https://www.mytimcdn.com/ios/distribution/2.0.8/20161215/A4772AE90E844FC8BD143813792CF110.jpg/n11",
+				"productId": 620,
+				"isExplosion": 0,
+				"maxoq": 2147483647,
+				"directSupply": 1,
+				"divisionCode": 430100,
+				"unit": "箱",
+				"netWeight": "10.0000",
+				"grossWeight": "10.0000",
+				"categoryId": 101146000,
+				"strikePrice": "15.00",
+				"status": 1,
+				"tags": [
+					{
+						"tagName": "补"
+					}
+				],
+				"productTags": [
+					{
+						"tagId": 4,
+						"tagName": "支持批发",
+						"tagImage": "https://www.mytimcdn.com/Storage/images/20161108/f5308c18d19f44ae8ee8ce4d8e703aea.png",
+						"target": "3"
+					}, {
+						"tagId": 3,
+						"tagName": "支持集采",
+						"tagImage": "https://www.mytimcdn.com/Storage/images/20161108/ab65e73ce15849f8bfcd93929666b2d0.png",
+						"target": "3"
+					}
+				]
+			}, {
+				"explosionPrice": "1.000",
+				"agentType": 2,
+				"minoq": 10,
+				"shopName": "水果小店",
+				"source": 1,
+				"categoryName": "红莴笋",
+				"productName": "莴笋",
+				"addressId": 131,
+				"soldCount": 130,
+				"previousPrice": "2.00",
+				"isPresale": true,
+				"shopId": 82,
+				"stock": 70,
+				"salesState": 0,
+				"thumbnail": "https://www.mytimcdn.com/Storage/images/20161214/5b68b63f871b4825a354214d9cb24954.jpg/n11",
+				"productId": 609,
+				"propaganda": "",
+				"isExplosion": 0,
+				"maxoq": 2147483647,
+				"directSupply": 1,
+				"divisionCode": 110101,
+				"unit": "斤",
+				"netWeight": "1.0000",
+				"grossWeight": "1.0000",
+				"categoryId": 101192100,
+				"strikePrice": "1.00",
+				"status": 1,
+				"tags": [],
+				"productTags": []
+			}, {
+				"agentType": 2,
+				"minoq": 10,
+				"shopName": "水果小店",
+				"source": 0,
+				"categoryName": "绿状元",
+				"productName": "苦瓜01",
+				"addressId": 131,
+				"soldCount": 10,
+				"previousPrice": "3.00",
+				"isPresale": true,
+				"shopId": 82,
+				"stock": 1990,
+				"salesState": 0,
+				"thumbnail": "https://www.mytimcdn.com/Storage/images/20161214/025e0c07ad0140dc8dde551e08cf157f.png/n11",
+				"productId": 603,
+				"propaganda": "",
+				"isExplosion": 0,
+				"maxoq": 2147483647,
+				"directSupply": 1,
+				"divisionCode": 410101,
+				"unit": "斤",
+				"netWeight": "1.0000",
+				"grossWeight": "1.0000",
+				"categoryId": 101101101,
+				"strikePrice": "3.00",
+				"status": 1,
+				"tags": [],
+				"productTags": [
+					{
+						"tagId": 1,
+						"tagName": "绿色认证",
+						"tagImage": "https://www.mytimcdn.com/Storage/images/20161108/c29726fcfc674daeb78f68bcddebde64.png",
+						"target": "3"
+					}, {
+						"tagId": 6,
+						"tagName": "冷藏",
+						"tagImage": "https://www.mytimcdn.com/Storage/images/20161125/76538d8de09540ca947f1abb01c5d311.png",
+						"target": "3"
+					}
+				]
+			}, {
+				"agentType": 2,
+				"minoq": 1,
+				"shopName": "蔬菜小店",
+				"source": 0,
+				"categoryName": "大叶香菜",
+				"productName": "进口啊啊啊",
+				"addressId": 136,
+				"soldCount": 0,
+				"previousPrice": "10.00",
+				"isPresale": true,
+				"shopId": 83,
+				"stock": 5000,
+				"salesState": 0,
+				"thumbnail": "https://www.mytimcdn.com/Storage/images/20161208/c89bba7e287e468ab342f4ad9ebfe364.png/n11",
+				"productId": 591,
+				"isExplosion": 0,
+				"maxoq": 2147483647,
+				"directSupply": 1,
+				"divisionCode": 1091010,
+				"unit": "斤",
+				"netWeight": "1.0000",
+				"grossWeight": "1.0000",
+				"categoryId": 101100100,
+				"strikePrice": "10.00",
+				"status": 1,
+				"tags": [],
+				"productTags": [
+					{
+						"tagId": 1,
+						"tagName": "绿色认证",
+						"tagImage": "https://www.mytimcdn.com/Storage/images/20161108/c29726fcfc674daeb78f68bcddebde64.png",
+						"target": "3"
+					}, {
+						"tagId": 7,
+						"tagName": "进口",
+						"tagImage": "https://www.mytimcdn.com/Storage/images/20161125/66803bb68c264082a88d81f9915d407c.png",
+						"target": "3"
+					}
+				]
+			}, {
+				"agentType": 2,
+				"minoq": 1,
+				"shopName": "水果小店",
+				"source": 1,
+				"categoryName": "白菜",
+				"productName": "干么力图",
+				"addressId": 131,
+				"soldCount": 0,
+				"previousPrice": "30.00",
+				"isPresale": true,
+				"shopId": 82,
+				"stock": 50000,
+				"salesState": 0,
+				"thumbnail": "https://www.mytimcdn.com/ios/distribution/2.0.7/20161208/D6049420EF274F5BA742C18DA29DD6A8.jpg/n11",
+				"productId": 590,
+				"isExplosion": 0,
+				"maxoq": 2147483647,
+				"directSupply": 1,
+				"divisionCode": 430100,
+				"unit": "箱",
+				"netWeight": "10.0000",
+				"grossWeight": "10.0000",
+				"categoryId": 101127000,
+				"strikePrice": "30.00",
+				"status": 1,
+				"tags": [
+					{
+						"tagName": "补"
+					}
+				],
+				"productTags": [
+					{
+						"tagId": 3,
+						"tagName": "支持集采",
+						"tagImage": "https://www.mytimcdn.com/Storage/images/20161108/ab65e73ce15849f8bfcd93929666b2d0.png",
+						"target": "3"
+					}, {
+						"tagId": 6,
+						"tagName": "冷藏",
+						"tagImage": "https://www.mytimcdn.com/Storage/images/20161125/76538d8de09540ca947f1abb01c5d311.png",
+						"target": "3"
+					}
+				]
+			}, {
+				"agentType": 2,
+				"minoq": 1000,
+				"shopName": "水果小店",
+				"source": 1,
+				"categoryName": "上海青",
+				"productName": "上海青10",
+				"addressId": 131,
+				"soldCount": 0,
+				"previousPrice": "5.00",
+				"isPresale": true,
+				"shopId": 82,
+				"stock": 20000,
+				"salesState": 0,
+				"thumbnail": "https://www.mytimcdn.com/android/32/20161124/1479955658123.JPG/n11",
+				"productId": 589,
+				"isExplosion": 0,
+				"maxoq": 2147483647,
+				"directSupply": 1,
+				"divisionCode": 430102,
+				"unit": "斤",
+				"netWeight": "1.0000",
+				"grossWeight": "1.0000",
+				"categoryId": 101109100,
+				"strikePrice": "5.00",
+				"status": 1,
+				"tags": [],
+				"productTags": [
+					{
+						"tagId": 4,
+						"tagName": "支持批发",
+						"tagImage": "https://www.mytimcdn.com/Storage/images/20161108/f5308c18d19f44ae8ee8ce4d8e703aea.png",
+						"target": "3"
+					}
+				]
+			}, {
+				"agentType": 2,
+				"minoq": 100,
+				"shopName": "水果小店",
+				"source": 1,
+				"categoryName": "奶白菜",
+				"productName": "大白菜00",
+				"addressId": 131,
+				"soldCount": 0,
+				"previousPrice": "1.00",
+				"isPresale": true,
+				"shopId": 82,
+				"stock": 20000,
+				"salesState": 0,
+				"thumbnail": "https://www.mytimcdn.com/android/34/20161207/1481082993734.JPG/n11",
+				"productId": 588,
+				"propaganda": "",
+				"isExplosion": 0,
+				"maxoq": 2147483647,
+				"directSupply": 1,
+				"divisionCode": 230201,
+				"unit": "斤",
+				"netWeight": "0.9800",
+				"grossWeight": "1.1200",
+				"categoryId": 101127100,
+				"strikePrice": "1.00",
+				"status": 1,
+				"tags": [
+					{
+						"tagName": "补"
+					}
+				],
+				"productTags": []
+			}, {
+				"agentType": 2,
+				"minoq": 100,
+				"shopName": "看咯",
+				"source": 1,
+				"categoryName": "佛手瓜",
+				"productName": "玉米",
+				"addressId": 181,
+				"soldCount": 0,
+				"previousPrice": "2.00",
+				"isPresale": true,
+				"shopId": 108,
+				"stock": 10000,
+				"salesState": 0,
+				"thumbnail": "https://www.mytimcdn.com/ios/distribution/2.0.7/20161205/B8A72FA3653D47E5828F78FCEA2E2327.jpg/n11",
+				"productId": 580,
+				"isExplosion": 0,
+				"maxoq": 2147483647,
+				"directSupply": 1,
+				"divisionCode": 430100,
+				"unit": "斤",
+				"netWeight": "0.5000",
+				"grossWeight": "1.0000",
+				"categoryId": 101151100,
+				"strikePrice": "2.00",
+				"status": 1,
+				"tags": [
+					{
+						"tagName": "补"
+					}
+				],
+				"productTags": []
+			}, {
+				"agentType": 2,
+				"minoq": 1,
+				"shopName": "小火锅",
+				"source": 0,
+				"categoryName": "大叶香菜",
+				"productName": "进口啊啊啊",
+				"addressId": 185,
+				"soldCount": 0,
+				"previousPrice": "30.00",
+				"isPresale": true,
+				"shopId": 89,
+				"stock": 5000,
+				"salesState": 0,
+				"thumbnail": "https://www.mytimcdn.com/Storage/images/20161208/c89bba7e287e468ab342f4ad9ebfe364.png/n11",
+				"productId": 572,
+				"isExplosion": 0,
+				"maxoq": 2147483647,
+				"divisionCode": 1091010,
+				"unit": "斤",
+				"netWeight": "1.0000",
+				"grossWeight": "1.0000",
+				"categoryId": 101100100,
+				"strikePrice": "30.00",
+				"status": 1,
+				"tags": [],
+				"productTags": [
+					{
+						"tagId": 1,
+						"tagName": "绿色认证",
+						"tagImage": "https://www.mytimcdn.com/Storage/images/20161108/c29726fcfc674daeb78f68bcddebde64.png",
+						"target": "3"
+					}, {
+						"tagId": 7,
+						"tagName": "进口",
+						"tagImage": "https://www.mytimcdn.com/Storage/images/20161125/66803bb68c264082a88d81f9915d407c.png",
+						"target": "3"
+					}
+				]
+			}
+		],
+		"totalCount": 23,
+		"pageNumber": 3,
+		"currentPage": 2,
+		"pageSize": 10
+	}
+}

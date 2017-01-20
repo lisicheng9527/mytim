@@ -1,0 +1,103 @@
+{
+	"code": 0,
+	"msg": "操作成功",
+	"timestamp": "20170103102030",
+	"uuid": "01E43E668DCF1217E4D46AFED6D94360",
+	"data": {
+		"cityCode": 430101,
+		"cityName": "长沙市",
+		"messageCount": 0,
+		"shoppingCartCount": 0,
+		"banners": [
+			{
+				"bannerId": 7,
+				"bannerType": 1,
+				"image": "https://www.mytimcdn.com/Storage/images/20161122/9de3dc6237f345f9827a7413e40de608.jpg",
+				"url": "",
+				"title": "商品"
+			}, {
+				"bannerId": 8,
+				"bannerType": 2,
+				"image": "https://www.mytimcdn.com/Storage/images/20161122/47fd629d97bf4401ab267d253cd6e80a.jpg",
+				"url": "311",
+				"title": "需求"
+			}
+		],
+		"categories": [
+			{
+				"categoryId": 100129000,
+				"categoryName": "苹果",
+				"thumbnail": "https://www.mytimcdn.com/Storage/images/20161208/27abac4a68bd4191a35b854f732f1ad9.jpg"
+			}, {
+				"categoryId": 101000000,
+				"categoryName": "蔬菜",
+				"thumbnail": "https://www.mytimcdn.com/Storage/images/20161208/ec09b132bba149eaa006ff5b47093ad4.jpg"
+			}, {
+				"categoryId": 100103000,
+				"categoryName": "草莓",
+				"thumbnail": "https://www.mytimcdn.com/Storage/images/20161208/47b33ed9e5d14773bc92cc88772fee47.jpg"
+			}, {
+				"categoryId": 101122000,
+				"categoryName": "西红柿",
+				"thumbnail": "https://www.mytimcdn.com/Storage/images/20161208/14ff66ead9904d4e8e8a3a47626607ee.jpg"
+			}, {
+				"categoryId": 100141000,
+				"categoryName": "桃子",
+				"thumbnail": "https://www.mytimcdn.com/Storage/images/20161208/3e6b05b960c3479f89dbc5bc55406b8a.jpg"
+			}, {
+				"categoryId": 100150000,
+				"categoryName": "杨梅",
+				"thumbnail": "https://www.mytimcdn.com/Storage/images/20161208/145e227366bf4168b6660450a3db0226.jpg"
+			}, {
+				"categoryId": 101148000,
+				"categoryName": "辣椒",
+				"thumbnail": "https://www.mytimcdn.com/Storage/images/20161208/5b7394e9ee054735be908120a975c15e.jpg"
+			}, {
+				"categoryId": 102115000,
+				"categoryName": "玉米",
+				"thumbnail": "https://www.mytimcdn.com/Storage/images/20161208/277768e2c91d4696afa7c8c4607e4c58.jpg"
+			}, {
+				"categoryId": 100101000,
+				"categoryName": "菠萝",
+				"thumbnail": "https://www.mytimcdn.com/Storage/images/20161208/d8bca7a66e364599833a827c76a5f98f.jpg"
+			}
+		],
+		"floors": [
+			{
+				"floorType": 2,
+				"banner": "https://www.mytimcdn.com/Storage/images/20160923/c6f4305ecbcc42d4a014380c0a52c648.jpg",
+				"title": "实力供应",
+				"items": []
+			}, {
+				"floorType": 1,
+				"banner": "https://www.mytimcdn.com/Storage/images/20161122/8c3119eda9b6408f920342abdd706aa8.jpg",
+				"title": "基地直供",
+				"items": [
+					{
+						"productId": 565,
+						"productName": "水蜜桃00",
+						"thumbnail": "https://www.mytimcdn.com/Storage/images/20161124/b8cbd7a5b13849cdbd41d28819580216.jpg/n33",
+						"strikePrice": 1,
+						"previousPrice": 2,
+						"unit": "斤",
+						"isPresale": true
+					}, {
+						"productId": 566,
+						"productName": "西红柿 粉果番茄 湖南省 长沙市",
+						"thumbnail": "https://www.mytimcdn.com/ios/distribution/2.0.7/20161205/F3706A12A0A5471681C2E6EC815DBA55.jpg/n33",
+						"strikePrice": 4,
+						"previousPrice": 2,
+						"unit": "件",
+						"isPresale": true
+					}
+				]
+			}, {
+				"floorType": 1,
+				"banner": "https://www.mytimcdn.com/Storage/images/20161209/835ca297d95747e28d00be9cb9d0ad2d.jpg",
+				"title": "今日爆款",
+				"items": []
+			}
+		],
+		"subscribes": []
+	}
+}

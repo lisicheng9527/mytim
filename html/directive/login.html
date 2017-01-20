@@ -1,0 +1,23 @@
+<div class="login single-page" ng-class='{active:info.showLogin}'>
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-icon mui-icon-left-nav mui-pull-left" ng-click="info.showLogin=false"></a>
+		<h1 class="mui-title">登录</h1>
+	</header>
+	<div class="zkong"></div>
+	<div class="zdenglu">
+		<form action="" method="post">
+			<input type="text" id="user" placeholder="请输入手机号码" />
+			<div class="mima">
+				<input type="text" ng-model='yzm' id="password" placeholder="请输入短信验证码" />
+				<input class="get" type="button" value="获取验证码" />
+
+			</div>
+			<div class="wangji mui-checkbox">
+				<input name="checkbox" class="agree-check" value="Item 2" type="checkbox" checked="">
+				<span>同意<a>农卖通交易协议</a>和<a>隐私保护政策</a></span>
+			</div>
+			<span class="aa"></span>
+			<input type="button" class="btn" value="登录" />
+		</form>
+	</div>
+</div>

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	    <title>农卖通</title>
+	    <script src="js/mui.min.js"></script>
+	    <link href="css/mui.min.css" rel="stylesheet"/>
+	    <link rel="stylesheet" type="text/css" href="css/icons-extra.css" />
+	    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_tym02duzi6kcsor.css" />
+	    <style>
+		    *{margin: 0;padding: 0;}
+	    	li{list-style-type: none;}
+	    	h1,h2,h3,h4,h5,h6{margin: 0;}
+		    body{
+	    		width: 100%;
+	    		max-width: 640px;
+	    		min-width: 300px;
+	    		margin: 0 auto;
+	    		background-color: #F0F0F0;
+	    		padding-top: 58px;
+	    		font-family: 'Microsoft Yahei';
+	    	}
+	    	.mui-bar{
+	    		max-width: 640px;
+	    		min-width: 300px;
+	    		height: auto;
+	    		/*padding: 6px 10px;*/
+	    		margin: 0 auto;
+	    	}
+	    	.mui-action-back{
+	    		color: #888;
+	    	}
+	    	
+	    	.head{
+	    		position: relative;
+	    	}
+	    	.head .cover-bg{
+	    		display: block;
+	    	}
+	    	.head .person-info{
+	    		position: absolute;
+	    		top: 0;
+	    		width: 100%;
+	    		height: 100%;
+	    		background-color: rgba(0,0,0,.6);
+	    	}
+			.head .photo-box{
+				width: 3.75rem;
+				height: 3.75rem;
+				border-radius: 50%;
+				overflow: hidden;
+				text-align: center;
+				margin: 0 auto;
+			}
+			.head .photo-box img{
+				display: block;
+			}
+			.head .area{
+				text-align: center;
+				color: #fff;
+				margin: .5rem 0;
+				font-size: 0.9rem;
+			}
+			.head .protected{
+				text-align: center;
+			}
+			.protected-money{
+				color: #fff;
+				background-color: #FE4141;
+				text-align: center;
+				padding: 0.8rem 0;
+				font-size: 1rem;
+			}
+			
+			.statistics-data ul{
+				display: table;
+				width: 100%;
+				background-color: #fff;
+				padding: 10px 0;
+				table-layout: fixed;
+			}
+			.statistics-data ul li{
+				text-align: center;
+				border-right: 1px solid #ddd;
+				display: table-cell;
+			}
+			.statistics-data ul li h4{
+				font-weight: normal;
+			}
+			.statistics-data ul li span{
+				color: #C0C0C0;
+				font-size: 14px;
+			}
+			
+			.tabbar{
+				margin: 20px 0;
+				font-size: 16px;
+			}
+			.tabbar .tags{
+				margin-left: 10px;
+				color: #ACACB4;
+				font-size: 14px;
+			}
+			.tabbar .conment{
+				margin-right: 20px;
+				color: #ACACB4;
+				font-size: 14px;
+			}
+			.mui-table-view-cell{
+				padding: 12px 15px;
+				color: #333;
+			}
+			.mui-table-view:after,.mui-table-view:before,.mui-table-view-cell:after{
+				height: 0;
+			}
+			
+			
+			.mui-control-content {
+				background-color: white;
+				/*min-height: 215px;*/
+				border: none !important;
+			}
+			.mui-control-content .mui-loading {
+				margin-top: 50px;
+			}
+			.mui-slider-indicator.mui-segmented-control{
+				background-color: #fff;
+			}
+			.mui-segmented-control .mui-control-item{
+				line-height: 45px;
+			}
+			.mui-control-item.mui-active{
+				color: #E3393C !important;
+			}
+			.mui-slider-progress-bar{
+				position: relative;
+				height: 4px;
+				top: 0;
+				background-color: #E3393C !important;
+			}
+			.mui-scroll{
+				position: static;
+			}
+			.mui-table-view .mui-media-object{
+				max-width: 8rem;
+				height: auto;
+			}
+			.mui-ellipsis{
+				color: #E3383C;
+				font-size: 14px;
+				margin-top: 4px;
+			}
+			.old-price{
+				text-decoration: line-through;
+				color: #999;
+			}
+			.protect-icon{
+				margin-left: 5px;
+				width: 5rem !important;
+			}
+			.product-name{
+				color: #333;
+				font-size: 1.2rem;
+				font-weight: 300;
+			}
+			.arrival-date{
+				position: absolute;
+				right: 15px;
+				top: 40px;
+			}
+			.arrival-date .sell-out{
+				font-size: 14px;
+				text-align: right;
+			}
+			.mui-bar-tab .mui-tab-item.mui-active{
+				color: #FF4141;
+			}
+			
+			.fruits-item{
+				width: 100%;
+				display: table;
+				padding: 0 6px;
+				background-color: #F0F0F0;
+			}
+			.fruits-item .fruits-list img{
+				display: block;
+			}
+			.fruits-item .mui-table-view-cell{
+				display: table-cell;
+				padding: 0 12px 11px;
+			}
+			.fruits-item .fruits-info{
+				background-color: #fff;
+				padding: 15px 10px;
+			}
+			.fruits-item .fruits-info h4{
+				font-weight: normal;
+				font-size: 1.2rem;
+			}
+			.fruits-item .fruits-info .arrive-date{
+				color: #888;
+				margin: 5px 0;
+			}
+			.fruits-item .price{
+				color: #FE4141;
+				font-size: 16px;
+			}
+			.contact-person{
+				padding: 30px 15px;
+			}
+			.contact-person h5{
+				font-size: 18px;
+				color: #333;
+				margin-bottom: 10px;
+			}
+	    </style>
+	    <script type="text/javascript">
+	    	(function(doc,win){
+	      		var docEle = doc.documentElement,
+	      		resizeEvn = 'orientationchange' in win ? 'orientationchange' : 'resize',
+	      		recalc = function(){
+	      			var clientWidth = docEle.clientWidth;
+	      			if(!clientWidth) return;
+	      			if(clientWidth>=640){clientWidth=640;}
+	      			docEle.style.fontSize = 20*(clientWidth / 640)+'px';
+	      			perinfoCent();
+	      		},
+	      		perinfoCent = function(){
+	      			var centBox = doc.querySelector('.cent-box'),head = doc.querySelector('.head');
+	      			centBox.style.marginTop = ((head.offsetHeight-centBox.offsetHeight)/2)+'px';
+	      		};
+	      		win.onload = perinfoCent;
+	      		if(!doc.addEventListener) return;
+	      		win.addEventListener(resizeEvn,recalc,false);
+	      		doc.addEventListener('DOMContentLoaded',recalc,false);
+	      	})(document,window);
+	    </script>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">鲜果批发红星店</h1>
+		</header>
+		
+		<div class="head">
+			<img src="images/store-pic.png" width="100%" class="cover-bg" />
+			
+			<div class="person-info">
+				<div class="cent-box">
+					<div class="photo-box"><img src="images/per-photo.png" width="100%" /></div>
+					<div class="area">湖南省长沙市岳麓区</div>
+					<div class="protected">
+						<span class="iconfont icon-authentication" style="color: #B51C1C;"></span>
+						<span class="iconfont icon-baozhang" style="color: #009237;"></span>
+						<span class="iconfont icon-fanmiputongrentubiao" style="color: #F47A11;margin-left: 6px;"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="protected-money">交易保证金5000元</div>
+		<div class="statistics-data">
+			<ul>
+				<li>
+					<h4>一年</h4>
+					<span>会员用户</span>
+				</li>
+				<li>
+					<h4>530</h4>
+					<span>浏览次数</span>
+				</li>
+				<li>
+					<h4>100</h4>
+					<span>近30天成交订单</span>
+				</li>
+			</ul>
+		</div>
+		
+		<div class="tabbar">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						综合评价
+						<span class="tags">货物品质<label style="color: #FE4141;">4.9</label></span>
+						<span class="tags">售后服务<label style="color: #FE4141;">4.8</label></span>
+						<span class="mui-pull-right conment">5评价</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		
+		<div id="slider" class="mui-slider" style="margin-top: 20px;">
+			<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+				<a class="mui-control-item mui-active" href="#item1mobile">
+					供应信息
+				</a>
+				<a class="mui-control-item" href="#item2mobile">
+					店铺简介
+				</a>
+			</div>
+			<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-6"></div>
+			<div class="mui-scroll mui-slider-group" style="padding-top: 10px;">
+				<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+					<div id="scroll1">
+						<div class="mui-scroll">
+							<ul class="mui-table-view fruits-item">
+								<li class="mui-table-view-cell mui-media">
+									<a href="javascript:;">
+										<div class="fruits-list">
+											<img src="images/images/list-pic_05.png"/>
+										</div>
+										<div class="fruits-info">
+											<h4>吐鲁番无核紫葡萄</h4>
+											<div class="arrive-date">
+												<span>7月22号到货</span>
+												<span class="mui-pull-right">已销200斤</span>
+											</div>
+											<div class="price">￥24.80元/斤</div>
+										</div>
+									</a>
+								</li>
+								<li class="mui-table-view-cell mui-media">
+									<a href="javascript:;">
+										<div class="fruits-list">
+											<img src="images/images/list-pic_05.png"/>
+										</div>
+										<div class="fruits-info">
+											<h4>吐鲁番无核紫葡萄</h4>
+											<div class="arrive-date">
+												<span>7月22号到货</span>
+												<span class="mui-pull-right">已销200斤</span>
+											</div>
+											<div class="price">￥24.80元/斤</div>
+										</div>
+									</a>
+								</li>
+							</ul>
+							<ul class="mui-table-view fruits-item">
+								<li class="mui-table-view-cell mui-media">
+									<a href="javascript:;">
+										<div class="fruits-list">
+											<img src="images/images/list-pic_05.png"/>
+										</div>
+										<div class="fruits-info">
+											<h4>吐鲁番无核紫葡萄</h4>
+											<div class="arrive-date">
+												<span>7月22号到货</span>
+												<span class="mui-pull-right">已销200斤</span>
+											</div>
+											<div class="price">￥24.80元/斤</div>
+										</div>
+									</a>
+								</li>
+								<li class="mui-table-view-cell mui-media">
+									<a href="javascript:;">
+										<div class="fruits-list">
+											<img src="images/images/list-pic_05.png"/>
+										</div>
+										<div class="fruits-info">
+											<h4>吐鲁番无核紫葡萄</h4>
+											<div class="arrive-date">
+												<span>7月22号到货</span>
+												<span class="mui-pull-right">已销200斤</span>
+											</div>
+											<div class="price">￥24.80元/斤</div>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div id="item2mobile" class="mui-slider-item mui-control-content">
+					<div id="scroll2">
+						<div class="mui-scroll">
+							<!--<div class="mui-loading">
+								<div class="mui-spinner">
+								</div>
+							</div>-->
+							<div class="contact-person">
+								<h5>简介</h5>
+								<p style="margin-bottom: 30px;">本店铺出售菠萝、木瓜、香蕉、玉米、蔬菜等</p>
+								<p>联系人：魏光华</p>
+								<p>联系电话：134****6959</p>
+								<p>联系地址：湖南省长沙市岳麓区金融科技大厦9楼</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	    <title>农卖通</title>
+	    <script src="../js/mui.min.js"></script>
+	    <link href="../css/mui.min.css" rel="stylesheet"/>
+	    <link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+	    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_7irz1v0ukj32qpvi.css"/>
+	    <style>
+		    *{margin: 0;padding: 0;}
+	    	li{list-style-type: none;}
+	    	
+		    body{
+	    		width: 100%;
+	    		max-width: 640px;
+	    		min-width: 300px;
+	    		margin: 0 auto;
+	    		background-color: #f0f0f0;
+	    		padding-bottom: 50px;
+	    		padding-top: 58px;
+	    		font-family: 'Microsoft Yahei';
+	    	}
+	    	header{
+	    		top: 0;
+	    		position: fixed;
+	    		z-index: 999;
+	    	}
+	    	
+	    	.fixed-bar{
+				width: 100%;
+				max-width: 640px;
+				max-height: 50px;
+				position: fixed;
+				top: 0;
+				color: #fff;
+				z-index: 1;
+				background-color: #666;
+				display: flex;
+			}
+			.fixed-bar .closeBar{
+				position: absolute;
+				width: 40px;
+				height: 100%;
+				left: 0;
+				top: 0;
+			}
+			.fixed-bar .app-intro{
+				overflow: hidden;
+				float: left;
+				width: 68%;
+				border-top: 1px solid #666;
+				padding-top: 5px;
+				padding-left: 40px;
+			}
+			.fixed-bar .logo{
+				float: left;
+				margin-right: 10px;
+			}
+			.fixed-bar .introduce{
+				float: left;
+				margin-top: 10px;
+			}
+			.fixed-bar p{
+				color: #fff;
+				font-size: 1rem;
+			}
+			.fixed-bar .open-app{
+				width: 32%;
+				text-align: center;
+				color: #fff;
+				font-size: 16px;
+				line-height: 50px;
+				border-top: 1px solid #E3383C;
+				background-color: #E3383C;
+			}
+			.close-btn{
+				position: absolute;
+				top: 18px;
+				left: 12px;
+				font-size: 16px;
+			}
+	    	
+	    	.iconfont {
+				font-family: "iconfont" !important;
+				font-size: 14px;
+				font-style: normal;
+				-webkit-font-smoothing: antialiased;
+				-webkit-text-stroke-width: 0.2px;
+				-moz-osx-font-smoothing: grayscale;
+			}
+			.mui-slider-indicator .mui-indicator{
+				box-shadow: none;
+				-webkit-box-shadow: none;
+			}
+			.topBar {
+				width: 100%;
+				max-width: 640px;
+				min-width: 300px;
+				position: fixed;
+				top: 50px;
+				border-bottom: 1px solid #ccc;
+				z-index: 200;
+				padding:10px 0;
+				background-color: #F5F5F5;
+			}
+			.topBar .iconTxt{
+				padding: 0;
+				text-align: center;
+				color: #797979;
+				font-size: 16px;
+			}
+			
+			.topBar .searchBox{
+				height: 38px;
+				margin: 0 50px 0 40px;
+				position:relative;
+			}
+			
+			.searchBox .mui-icon{
+				position:absolute;
+				top:7px;
+				left:8px;
+				color:#888888;
+			}
+			
+			.scanBox {
+				position: absolute;
+				top: 18px;
+				left: 0;
+				width: 40px;
+				height: 30px;
+				text-align:center;
+			}
+			
+			.scanBox .mui-icon{
+				color: #797979;
+			}
+			
+			.scanBox .iconfont{
+				font-size:22px;
+				color:#fff;
+				display: inline-block;
+			}
+			
+			.menuBox {
+				position: absolute;
+				top: 16px;
+				right: 15px;
+				height: 30px;
+				color: #AAA;
+				text-align:center;
+			}
+			.menuBox .mui-icon-extra{
+				font-size: 28px;
+			}
+			.searchBox .seaBtn{
+				height:100%;
+				padding:0;
+				border-radius:6px;
+				outline:none;
+				font-size:14px;
+				text-indent:40px;
+				border:none;
+				border: 1px solid #ccc;
+			}
+			
+			.filter-box{
+				width: 100%;
+				max-width: 640px;
+				position: fixed;
+				top: 108px;
+				z-index: 3;
+			}
+			.filter ul{
+				width: 100%;
+				display: table;
+				background-color: #fff;
+				box-shadow: 0px 1px 10px #969696;
+				-webkit-box-shadow: 0px 1px 5px #bfbfbf;
+				table-layout: fixed;
+			}
+			.filter ul li{
+				padding: 13px 0;
+				color: #666;
+				font-size: 16px;
+				text-align: center;
+				display: table-cell;
+			}
+			.filter .iconfont{
+				margin-left: 5px;
+			}
+			.filter-list{
+				background-color: #fff;
+				overflow: hidden;
+				display: none;
+				/*transition: all 1s ease-in;
+				-webkit-transition: all 1s ease-in;*/
+			}
+			.filter-list ul li{
+				padding: 10px 15px;
+				font-size: 14px;
+				color: #8c8c8c;
+				border-bottom: 1px solid #ddd;
+				transition: all 1s ease-in;
+				-webkit-transition: all 1s ease-in;
+				transition-duration: 200ms;
+			}
+			
+			.filter-list li .mui-icon{
+				color: #FF4141;
+				font-size: 34px;
+				left: 8px;
+				line-height: 0;
+				position: relative;
+				top: 10px;
+			}
+			
+			/**产品滑动**/
+	    	.mui-control-content {
+				background-color: white;
+				/*min-height: 215px;*/
+				border: none !important;
+			}
+			.mui-table-view{
+				background-color: #f0f0f0;
+			}
+			.mui-table-view .mui-table-view-cell:nth-of-type(1){
+				margin-top: 0;
+			}
+			.mui-table-view .mui-table-view-cell{
+				background-color: #fff;
+				margin-top: 10px;
+			}
+			.mui-table-view-cell:after,.mui-table-view:before,.mui-table-view:after{
+				height: 0;
+			}
+			.mui-control-content .mui-loading {
+				margin-top: 50px;
+			}
+			.mui-slider-indicator.mui-segmented-control{
+				background-color: #fff;
+			}
+			.mui-segmented-control .mui-control-item{
+				line-height: 45px;
+			}
+			.mui-control-item.mui-active{
+				color: #E3393C !important;
+			}
+			.mui-slider-progress-bar{
+				position: relative;
+				height: 4px;
+				top: -4px;
+				background-color: #E3393C !important;
+			}
+			.mui-media-body .iconfont{
+				font-size: 1.2rem;
+			}
+			.mui-media-body .order-num{
+				font-size: .8rem;
+				color: #ccc;
+			}
+			.mui-scroll{
+				position: static;
+			}
+			.mui-table-view .mui-media-object{
+				max-width: 8rem;
+				height: 8rem;
+			}
+			.mui-ellipsis{
+				color: #E3383C;
+				font-size: 1.2rem;
+			}
+			.old-price{
+				text-decoration: line-through;
+				color: #999;
+				display: block;
+				/*margin: 0.2rem 0;*/
+				font-size: 0.9rem;
+			}
+			.protect-icon{
+				margin-left: 5px;
+				width: 5rem !important;
+			}
+			.product-name{
+				color: #333;
+				font-size: 1.2rem;
+				font-weight: 300;
+			}
+			.arrival-date{
+				position: absolute;
+				right: 15px;
+				top: 40px;
+			}
+			.arrival-date .sell-out{
+				font-size: 14px;
+				text-align: right;
+			}
+			.mui-bar-tab .mui-tab-item.mui-active{
+				color: #FF4141;
+			}
+			.back-top{
+				position: fixed;
+				bottom: 30px;
+				right: 20px;
+				background-color: #FE4141;
+				width: 50px;
+				height: 50px;
+				border-radius: 50%;
+				color: #fff;
+				line-height: 55px;
+				text-align: center;
+			}
+			.mui-backdrop{
+				display: none;
+			}
+	    </style>
+	    <script type="text/javascript">
+	    	(function(doc){
+	    		var docEle = doc.documentElement,clientW = docEle.getBoundingClientRect().width;
+	    		if(clientW > 640){clientW=640;}
+	    		docEle.style.fontSize = clientW/32+'px';
+	    	})(document);
+	    </script>
+	</head>
+	<body>
+		<header id="pullrefresh">
+			<div class="fixed-bar">
+				<span class="mui-icon mui-icon-close close-btn"></span>
+				<div class="closeBar"></div>
+				<div class="app-intro">
+					<img src="../images/logo.png" width="40" class="logo" />
+					<div class="introduce">
+						<p>打开农卖通APP 买卖更轻松</p>
+					</div>
+				</div>
+				<a href="https://api.mytim.cn/download.html" class="open-app">立即打开 &gt;&gt;</a>
+			</div>
+			
+			<div class="topBar">
+				<div class="scanBox">
+					<span class="mui-action-back mui-icon mui-icon-left-nav"></span>
+					<!--<p class="iconTxt">扫呀扫</p>-->
+				</div>
+				<div class="searchBox">
+					<input type="text" class="seaBtn" placeholder="请输入商品关键字或场地">
+					<span class="mui-icon mui-icon-search"></span>
+				</div>
+				<div class="menuBox">
+					<span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span class="mui-badge">2</span></span>
+					<!--<p class="iconTxt">搜索</p>-->
+				</div>
+			</div>
+			
+			<div class="filter-box">
+				<div class="filter">
+					<ul>
+						<li id="huoyuan">货源<span class="iconfont icon-sort-small-copy-copy"></span></li>
+						<li id="sells">销量<span class="iconfont icon-sort-small-copy"></span></li>
+						<li id="price">价格<span class="iconfont icon-icon091" style="position: relative;bottom: 2px;"></span></li>
+					</ul>
+				</div>
+				<div class="filter-list huoyuan">
+					<ul>
+						<li>货源从低到高<span class="mui-icon mui-icon-checkmarkempty mui-pull-right"></span></li>
+						<li>货源从高到底</li>
+						<li>市场货</li>
+					</ul>
+				</div>
+				<div class="filter-list sells">
+					<ul>
+						<li>销量从低到高<span class="mui-icon mui-icon-checkmarkempty mui-pull-right"></span></li>
+						<li>销量从高到底</li>
+						<li>市场货</li>
+					</ul>
+				</div>
+				<div class="filter-list price">
+					<ul>
+						<li>价格从低到高<span class="mui-icon mui-icon-checkmarkempty mui-pull-right"></span></li>
+						<li>价格从高到底</li>
+						<li>市场货</li>
+					</ul>
+				</div>
+			</div>
+		</header>
+		
+		<div id="item1mobile" style="padding-top: 100px;">
+			<div id="scroll1">
+				<div id="scroll1">
+					<div class="mui-scroll">
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell mui-media">
+								<a href="javascript:;">
+									<img class="mui-media-object mui-pull-left" src="../images/product.png">
+									<div class="mui-media-body">
+										<h4 class="product-name">吐鲁番 无核紫葡萄 80斤/件</h4>
+										<p class='mui-ellipsis'>￥24.80元/斤</p>
+										<span class="old-price">￥24.80元/斤</span>
+										<p>
+											<span class="iconfont icon-authentication" style="color: #B51C1C;"></span>
+											<span class="iconfont icon-baozhang" style="color: #009237;"></span>
+											<span class="iconfont icon-icon1" style="color: #FF8208;font-size: 20px;"></span>
+										</p>
+									</div>
+									<div class="arrival-date">
+										<!--<span class="mui-ellipsis">7月22号到货</span>-->
+										<p class="sell-out">已售<span class="mui-ellipsis">500</span>件</p>
+									</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media">
+								<a href="javascript:;">
+									<img class="mui-media-object mui-pull-left" src="../images/product.png">
+									<div class="mui-media-body">
+										<h4 class="product-name">吐鲁番 无核紫葡萄 80斤/件</h4>
+										<p class='mui-ellipsis'>￥24.80元/斤</p>
+										<span class="old-price">￥24.80元/斤</span>
+										<p>
+											<span class="iconfont icon-authentication" style="color: #B51C1C;"></span>
+											<span class="iconfont icon-baozhang" style="color: #009237;"></span>
+											<span class="iconfont icon-icon1" style="color: #FF8208;font-size: 20px;"></span>
+										</p>
+									</div>
+									<div class="arrival-date">
+										<!--<span class="mui-ellipsis">7月22号到货</span>-->
+										<p class="sell-out">已售<span class="mui-ellipsis">500</span>件</p>
+									</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media">
+								<a href="javascript:;">
+									<img class="mui-media-object mui-pull-left" src="../images/product.png">
+									<div class="mui-media-body">
+										<h4 class="product-name">吐鲁番 无核紫葡萄 80斤/件</h4>
+										<p class='mui-ellipsis'>￥24.80元/斤</p>
+										<span class="old-price">￥24.80元/斤</span>
+										<p>
+											<span class="iconfont icon-authentication" style="color: #B51C1C;"></span>
+											<span class="iconfont icon-baozhang" style="color: #009237;"></span>
+											<span class="iconfont icon-icon1" style="color: #FF8208;font-size: 20px;"></span>
+										</p>
+									</div>
+									<div class="arrival-date">
+										<!--<span class="mui-ellipsis">7月22号到货</span>-->
+										<p class="sell-out">已售<span class="mui-ellipsis">500</span>件</p>
+									</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media">
+								<a href="javascript:;">
+									<img class="mui-media-object mui-pull-left" src="../images/product.png">
+									<div class="mui-media-body">
+										<h4 class="product-name">吐鲁番 无核紫葡萄 80斤/件</h4>
+										<p class='mui-ellipsis'>￥24.80元/斤</p>
+										<span class="old-price">￥24.80元/斤</span>
+										<p>
+											<span class="iconfont icon-authentication" style="color: #B51C1C;"></span>
+											<span class="iconfont icon-baozhang" style="color: #009237;"></span>
+											<span class="iconfont icon-icon1" style="color: #FF8208;font-size: 20px;"></span>
+										</p>
+									</div>
+									<div class="arrival-date">
+										<!--<span class="mui-ellipsis">7月22号到货</span>-->
+										<p class="sell-out">已售<span class="mui-ellipsis">500</span>件</p>
+									</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media">
+								<a href="javascript:;">
+									<img class="mui-media-object mui-pull-left" src="../images/product.png">
+									<div class="mui-media-body">
+										<h4 class="product-name">吐鲁番 无核紫葡萄 80斤/件</h4>
+										<p class='mui-ellipsis'>￥24.80元/斤</p>
+										<span class="old-price">￥24.80元/斤</span>
+										<p>
+											<span class="iconfont icon-authentication" style="color: #B51C1C;"></span>
+											<span class="iconfont icon-baozhang" style="color: #009237;"></span>
+											<span class="iconfont icon-icon1" style="color: #FF8208;font-size: 20px;"></span>
+										</p>
+									</div>
+									<div class="arrival-date">
+										<!--<span class="mui-ellipsis">7月22号到货</span>-->
+										<p class="sell-out">已售<span class="mui-ellipsis">500</span>件</p>
+									</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media">
+								<a href="javascript:;">
+									<img class="mui-media-object mui-pull-left" src="../images/product.png">
+									<div class="mui-media-body">
+										<h4 class="product-name">吐鲁番 无核紫葡萄 80斤/件</h4>
+										<p class='mui-ellipsis'>￥24.80元/斤</p>
+										<span class="old-price">￥24.80元/斤</span>
+										<p>
+											<span class="iconfont icon-authentication" style="color: #B51C1C;"></span>
+											<span class="iconfont icon-baozhang" style="color: #009237;"></span>
+											<span class="iconfont icon-icon1" style="color: #FF8208;font-size: 20px;"></span>
+										</p>
+									</div>
+									<div class="arrival-date">
+										<!--<span class="mui-ellipsis">7月22号到货</span>-->
+										<p class="sell-out">已售<span class="mui-ellipsis">500</span>件</p>
+									</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="mui-backdrop"></div>
+		<div id="scrollToTop" class="back-top"><span class="mui-icon-extra mui-icon-extra-top"></span></div>
+		
+		<script type="text/javascript">
+			(function(doc){
+				//条件筛选
+				var filterList = doc.querySelectorAll('.filter-list'),oMask = doc.querySelector('.mui-backdrop');
+				mui('.filter').on('tap','li',function(){
+					var nowList = doc.querySelector('.'+this.getAttribute('id'));
+
+					if(nowList.style.display == 'block'){
+						for(var i=0;i<filterList.length;i++){
+							filterList[i].style.display = 'none';
+						}
+						oMask.style.display = 'none';
+					}else{
+						for(var i=0;i<filterList.length;i++){
+							filterList[i].style.display = 'none';
+						}
+						oMask.style.display = 'block';
+						nowList.style.display = 'block';
+					}
+				});
+				
+				//条件选中
+				for(var i=0;i<filterList.length;i++){
+					mui(filterList[i]).on('tap','li',function(){
+						this.appendChild(this.parentNode.querySelector('.mui-icon'));
+					});
+				}
+				
+				mui('body').on('tap','.mui-backdrop',function(){
+					for(var i=0;i<filterList.length;i++){
+						filterList[i].style.display = 'none';
+					}
+					this.style.display = 'none';
+				});
+				
+				//关闭头部下载链接
+				mui('.fixed-bar').on('tap','.closeBar',function(){
+					animate(this.parentNode,'left',-doc.documentElement.getBoundingClientRect().width,function(){
+						doc.querySelector('.topBar').style.top = 0;doc.querySelector('.filter-box').style.top = 59+'px';doc.getElementById('item1mobile').style.paddingTop = 50+'px';
+					});
+				});
+				
+				function animate(obj,dir,target,cBack){
+					
+					clearInterval(obj.timer);
+					
+					obj.timer = setInterval(function(){
+						
+						var nowVal = obj.offsetLeft;
+						
+						var iSpeed = (target-nowVal)/5;
+						iSpeed = iSpeed > 0 ? Math.ceil(iSpeed) : Math.floor(iSpeed);
+						
+						if(nowVal == target){
+							clearInterval(obj.timer);
+							cBack && cBack();
+						}
+						
+						obj.style[dir] = (nowVal+iSpeed)+'px';
+						
+					},30);
+				}
+				
+				//返回顶部
+				var scrollToTopBox = document.getElementById('scrollToTop');
+				scrollToTopBox.addEventListener('tap', function(e) {
+					e.stopPropagation();
+					mui('#pullrefresh').pullRefresh().scrollTo(0, 0, 0);
+					window.scrollTo(0,0);
+				});
+			})(document);
+		</script>
+	</body>
+</html>

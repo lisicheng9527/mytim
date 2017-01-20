@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>农卖通</title>
+    <script src="../js/mui.min.js"></script>
+    <link href="../css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/icons-extra.css" />
+    <style>
+    	body{
+    		width: 100%;
+    		max-width: 640px;
+    		min-width: 300px;
+    		margin: 0 auto;
+    		padding-bottom: 50px;
+    		font-family: 'Microsoft Yahei';
+    	}
+    	*{margin: 0;padding: 0;}
+    	li{list-style-type: none;}
+    	h1,h2,h3,h4,h5,h6{margin: 0;}
+    	.mui-content{
+			background-color: #F0F0F0;
+		}
+		.title {
+			margin: 20px 15px 10px;
+			color: #6d6d72;
+			font-size: 15px;
+		}
+		
+		.iconfont {
+			font-family: "iconfont" !important;
+			font-size: 14px;
+			font-style: normal;
+			-webkit-font-smoothing: antialiased;
+			-webkit-text-stroke-width: 0.2px;
+			-moz-osx-font-smoothing: grayscale;
+		}
+		.mui-slider-indicator .mui-indicator{
+			box-shadow: none;
+			-webkit-box-shadow: none;
+		}
+		.topBar {
+			width: 100%;
+			max-width: 640px;
+			min-width: 300px;
+			position: fixed;
+			top: 0;
+			z-index: 200;
+			padding:5px 0;
+			/*background-color: #FF4141;*/
+		}
+		.changeBg{
+			width: 100%;
+			height: 100%;
+			top: 0;
+			z-index: -1;
+			opacity: 0;
+			background-color: #FF4141;
+			position: absolute;
+		}
+		.topBar .iconTxt{
+			margin-top: -3px;
+			padding: 0;
+			text-align: center;
+			color: #fff;
+			font-size: 16px;
+		}
+		
+		.topBar .searchBox{
+			height: 33px;
+			margin: 0 50px 0 75px;
+			position:relative;
+		}
+		
+		.searchBox .mui-icon{
+			position:absolute;
+			top:6px;
+			left:8px;
+			color:#888888;
+		}
+		
+		.scanBox {
+			position: absolute;
+			top: 10px;
+			left: 0;
+			width: 70px;
+			height: 30px;
+			text-align:center;
+		}
+		
+		.scanBox .mui-icon{
+			color: #fff;
+		}
+		
+		.scanBox .iconfont{
+			font-size:22px;
+			color:#fff;
+			display: inline-block;
+		}
+		
+		.menuBox {
+			position: absolute;
+			top: 14px;
+			right: 0;
+			width: 50px;
+			height: 30px;
+			text-align:center;
+		}
+		
+		.menuBox .mui-icon{
+			font-size:22px;
+			display:inline-block;
+			color:#fff;
+		}
+		
+		.searchBox .seaBtn{
+			height:100%;
+			padding:0;
+			border-radius:20px;
+			outline:none;
+			font-size:14px;
+			text-indent:40px;
+			border:none;
+		}
+		.searchBox .searPage{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			z-index: 3;
+		}
+    	
+    	.menu ul{
+    		overflow: hidden;
+    		padding: 15px 0;
+    	}
+    	.menu ul li{
+    		float: left;
+    		width: 20%;
+    		padding: 8px 18px 8px;
+    	}
+    	@media (max-width:340px){
+    		.menu ul li{
+    			padding: 8px 15px 8px;
+    		}
+    	}
+    	.menu ul li p{
+    		margin-top: 5px;
+    		margin-bottom: 0;
+    		color: #333;
+    		text-align: center;
+    	}
+    	.menu ul li img{
+    		display: block;
+    		width: 100%;
+    		border-radius: 6px;
+    	}
+    	.menu .second-menu li{
+    		padding-top: 0;
+    		padding-bottom: 12px;
+    	}
+    	.menu .all-type{
+    		position: relative;
+    	}
+    	.menu .all-type p{
+    		width: 100%;
+    		text-align: center;
+    		position: absolute;
+    		bottom: -17px;
+    		left: 0;
+    	}
+    	
+    	.advertisement{
+    		background-color: #fff;
+    	}
+    	.advertisement img{
+    		display: block;
+    	}
+    	
+    	.goods-list ul{
+    		display: flex;
+    		display: -webkit-flex;
+    	}
+    	.goods-list .price{
+    		color: #f00;
+    	}
+    	.goods-list ul li{
+    		text-align: center;
+    		width: 100%;
+    		padding: 15px;
+    	}
+    	.goods-list ul li a{
+    		display: block;
+    		overflow: hidden;
+    		position: relative;
+    	}
+    	.goods-list ul li:nth-child(2){
+    		border-left: 1px solid #ddd;
+    		border-right: 1px solid #ddd;
+    	}
+    	.goods-list ul li p{
+    		color: #333;
+    		margin-bottom: 5px;
+    	}
+    	.goods-list ul li label{
+    		font-size: 13px;
+    	}
+    	/*.goods-list .tags{
+    		position: absolute;
+    		top: 0;
+    		left: -25px;
+    		width: 100%;
+    	}
+    	.goods-list .tags .tag-box{
+    		background-color: #00CE52;
+    		position: absolute;
+    		color: #fff;
+    		padding: 2px 0;
+    		width: 100%;
+    		text-align: left;
+    		text-indent: 25px;
+    		left: -10px;
+    		font-size: .8rem;
+    		transform: rotateZ(-45deg);
+    		-webkit-transform: rotateZ(-45deg);
+    	}*/
+    	.look-more{
+    		background-color: #FFF3F3;
+    		padding: 15px 0;
+    		color: #666;
+    		font-size: 14px;
+    		text-align: center;
+    	}
+    	.look-more .arrow{
+    		margin-left: 8px;
+    		display: inline-block;
+    		vertical-align: middle;
+    	}
+    	
+    	/**产品滑动**/
+    	.mui-control-content {
+			background-color: white;
+			/*min-height: 215px;*/
+			border: none !important;
+		}
+		.mui-control-content .mui-loading {
+			margin-top: 50px;
+		}
+		.mui-slider-indicator.mui-segmented-control{
+			background-color: #fff;
+		}
+		.mui-segmented-control .mui-control-item{
+			line-height: 45px;
+		}
+		.mui-control-item.mui-active{
+			color: #E3393C !important;
+		}
+		.mui-slider-progress-bar{
+			position: relative;
+			height: 4px;
+			top: -4px;
+			background-color: #E3393C !important;
+		}
+		.mui-scroll{
+			position: static;
+		}
+		.mui-table-view .mui-media-object{
+			max-width: 8rem;
+			height: auto;
+		}
+		.mui-ellipsis{
+			color: #E3383C;
+			font-size: 14px;
+			margin-top: 4px;
+		}
+		.old-price{
+			text-decoration: line-through;
+			color: #999;
+		}
+		.protect-icon{
+			margin-left: 5px;
+			width: 5rem !important;
+		}
+		.product-name{
+			color: #333;
+			font-size: 1.2rem;
+			font-weight: 300;
+		}
+		.arrival-date{
+			position: absolute;
+			right: 15px;
+			top: 40px;
+		}
+		.arrival-date .sell-out{
+			font-size: 14px;
+			text-align: right;
+		}
+		.mui-bar-tab .mui-tab-item.mui-active{
+			color: #FF4141;
+		}
+		
+		.fixed-bar{
+			width: 100%;
+			max-width: 640px;
+			max-height: 50px;
+			position: fixed;
+			bottom: 50px;
+			color: #fff;
+			z-index: 1;
+			background-color: rgba(102,102,102,.76);
+			display: flex;
+		}
+		.fixed-bar .app-intro{
+			overflow: hidden;
+			float: left;
+			width: 68%;
+			border-top: 1px solid #666;
+			padding-top: 5px;
+			padding-left: 40px;
+		}
+		.fixed-bar .logo{
+			float: left;
+			margin-right: 10px;
+		}
+		.fixed-bar .introduce{
+			float: left;
+			margin-top: 10px;
+		}
+		.fixed-bar p{
+			color: #fff;
+		}
+		.fixed-bar .open-app{
+			width: 32%;
+			text-align: center;
+			color: #fff;
+			font-size: 16px;
+			line-height: 50px;
+			border-top: 1px solid #E3383C;
+			background-color: #E3383C;
+		}
+		.close-btn{
+			position: absolute;
+			top: 18px;
+			left: 12px;
+			font-size: 16px;
+		}
+    </style>
+    <script type="text/javascript" charset="utf-8">
+      	(function(doc,win){
+      		var docEle = doc.documentElement,
+      		resizeEvn = 'orientationchange' in window ? 'orientationchange' : 'resize',
+      		recalc = function(){
+      			var clientWidth = docEle.clientWidth;
+      			if(!clientWidth) return;
+      			if(clientWidth>=640){clientWidth=640;}
+      			docEle.style.fontSize = 20*(clientWidth / 640)+'px';
+      		}
+      		if(!doc.addEventListener) return;
+      		win.addEventListener(resizeEvn,recalc,false);
+      		doc.addEventListener('DOMContentLoaded',recalc,false);
+      	})(document,window);
+    </script>
+</head>
+<body>
+	<div class="mui-content">
+		<div id="slider" class="mui-slider">
+			<div class="mui-slider-group mui-slider-loop">
+				<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+				<div class="mui-slider-item mui-slider-item-duplicate">
+					<a href="#">
+						<img src="../images/yuantiao.jpg">
+					</a>
+				</div>
+				<!-- 第一张 -->
+				<div class="mui-slider-item">
+					<a href="#">
+						<img src="../images/shuijiao.jpg">
+					</a>
+				</div>
+				<!-- 第二张 -->
+				<div class="mui-slider-item">
+					<a href="#">
+						<img src="../images/muwu.jpg">
+					</a>
+				</div>
+				<!-- 第三张 -->
+				<div class="mui-slider-item">
+					<a href="#">
+						<img src="../images/cbd.jpg">
+					</a>
+				</div>
+				<!-- 第四张 -->
+				<div class="mui-slider-item">
+					<a href="#">
+						<img src="../images/yuantiao.jpg">
+					</a>
+				</div>
+				<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+				<div class="mui-slider-item mui-slider-item-duplicate">
+					<a href="#">
+						<img src="../images/shuijiao.jpg">
+					</a>
+				</div>
+			</div>
+
+			<div class="mui-slider-indicator">
+				<div class="mui-indicator mui-active"></div>
+				<div class="mui-indicator"></div>
+				<div class="mui-indicator"></div>
+				<div class="mui-indicator"></div>
+			</div>
+		</div>
+
+		<div class="topBar">
+			<div class="scanBox">
+				<span class="mui-icon mui-icon-location"></span><span style="color: #fff;font-size: 16px;position: relative;bottom: 1px;">长沙</span>
+				<!--<p class="iconTxt">扫呀扫</p>-->
+			</div>
+			<div class="searchBox">
+				<a class="searPage"></a>
+				<input type="text" class="seaBtn" placeholder="请输入产品关键字或场地">
+				<span class="mui-icon mui-icon-search"></span>
+			</div>
+			<div class="menuBox">
+				<!--<span class="mui-icon mui-icon-bars"></span>-->
+				<p class="iconTxt">登录</p>
+			</div>
+			<div class="changeBg"></div>
+		</div>
+		
+		<div class="menu">
+			<ul>
+				<li>
+					<a href="#">
+						<img src="../images/apple.png" />
+						<p>苹果</p>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="../images/grape.png" />
+						<p>葡萄</p>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="../images/banana.png" />
+						<p>香蕉</p>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="../images/eggplant.png" />
+						<p>茄子</p>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="../images/pumpkin.png" />
+						<p>南瓜</p>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="../images/cherry.png" />
+						<p>樱桃</p>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="../images/seafood.png" />
+						<p>海鲜</p>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="../images/strawberry.png" />
+						<p>草莓</p>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="../images/dryfruits.png" />
+						<p>干果</p>
+					</a>
+				</li>
+				<li class="all-type">
+					<a href="#">
+						<img src="../images/type.png" />
+						<p>所有分类</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+		
+		<div class="advertisement">
+			<div class="adv-bar"><img src="../images/section-bar.png" width="100%" /></div>
+			<div class="adv-pic"><img src="../images/adv1.png" width="100%" /></div>
+			
+			<div class="new-goods">
+				<div class="goods-list">
+					<ul>
+						<li>
+							<a href="#">
+								<img src="../images/product1.png" width="100%" />
+								<p>新疆无核紫葡萄</p>
+								<span class="price">￥24.80 <label>元/斤</label> ↓</span>
+								<!--<div class="tags">
+									<div class="tag-box">
+										<span>实力供应</span>
+									</div>
+								</div>-->
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="../images/product1.png" width="100%" />
+								<p>新疆无核紫葡萄</p>
+								<span class="price">￥24.80 <label>元/斤</label> ↓</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="../images/product1.png" width="100%" />
+								<p>新疆无核紫葡萄</p>
+								<span class="price">￥24.80 <label>元/斤</label> ↓</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="look-more">查看更多实力供应<img src="../images/arrow.png" class="arrow" /></div>
+		</div>
+		
+		<div id="slider" class="mui-slider" style="margin-top: 20px;">
+			<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+				<a class="mui-control-item mui-active" href="#item1mobile">
+					基地直供
+				</a>
+				<a class="mui-control-item" href="#item2mobile">
+					推荐商品
+				</a>
+				<a class="mui-control-item" href="#item3mobile">
+					苹果
+				</a>
+				<a class="mui-control-item" href="#item4mobile">
+					香蕉
+				</a>
+			</div>
+			<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-3"></div>
+			<div class="mui-scroll mui-slider-group">
+				<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+					<div id="scroll1">
+						<div class="mui-scroll">
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell mui-media">
+									<a href="javascript:;">
+										<img class="mui-media-object mui-pull-left" src="../images/product.png">
+										<div class="mui-media-body">
+											<h4 class="product-name">吐鲁番 无核紫葡萄 80斤/件</h4>
+											<p class='mui-ellipsis'>￥24.80元/斤</p>
+											<span class="old-price">￥24.80元/斤</span>
+											<p><img src="../images/protected-icon.png" class="protect-icon" /></p>
+										</div>
+										<div class="arrival-date">
+											<span class="mui-ellipsis">7月22号到货</span>
+											<p class="sell-out">已售<span class="mui-ellipsis">500</span>件</p>
+										</div>
+									</a>
+								</li>
+								<li class="mui-table-view-cell mui-media">
+									<a href="javascript:;">
+										<img class="mui-media-object mui-pull-left" src="../images/product.png">
+										<div class="mui-media-body">
+											<h4 class="product-name">吐鲁番 无核紫葡萄 80斤/件</h4>
+											<p class='mui-ellipsis'>￥24.80元/斤</p>
+											<span class="old-price">￥24.80元/斤</span>
+											<p><img src="../images/protected-icon.png" class="protect-icon" /></p>
+										</div>
+										<div class="arrival-date">
+											<span class="mui-ellipsis">7月22号到货</span>
+											<p class="sell-out">已售<span class="mui-ellipsis">500</span>件</p>
+										</div>
+									</a>
+								</li>
+								<li class="mui-table-view-cell mui-media">
+									<a href="javascript:;">
+										<img class="mui-media-object mui-pull-left" src="../images/product.png">
+										<div class="mui-media-body">
+											<h4 class="product-name">吐鲁番 无核紫葡萄 80斤/件</h4>
+											<p class='mui-ellipsis'>￥24.80元/斤</p>
+											<span class="old-price">￥24.80元/斤</span>
+											<p><img src="../images/protected-icon.png" class="protect-icon" /></p>
+										</div>
+										<div class="arrival-date">
+											<span class="mui-ellipsis">7月22号到货</span>
+											<p class="sell-out">已售<span class="mui-ellipsis">500</span>件</p>
+										</div>
+									</a>
+								</li>
+								<li class="mui-table-view-cell mui-media">
+									<a href="javascript:;">
+										<img class="mui-media-object mui-pull-left" src="../images/product.png">
+										<div class="mui-media-body">
+											<h4 class="product-name">吐鲁番 无核紫葡萄 80斤/件</h4>
+											<p class='mui-ellipsis'>￥24.80元/斤</p>
+											<span class="old-price">￥24.80元/斤</span>
+											<p><img src="../images/protected-icon.png" class="protect-icon" /></p>
+										</div>
+										<div class="arrival-date">
+											<span class="mui-ellipsis">7月22号到货</span>
+											<p class="sell-out">已售<span class="mui-ellipsis">500</span>件</p>
+										</div>
+									</a>
+								</li>
+								<li class="mui-table-view-cell mui-media">
+									<a href="javascript:;">
+										<img class="mui-media-object mui-pull-left" src="../images/product.png">
+										<div class="mui-media-body">
+											<h4 class="product-name">吐鲁番 无核紫葡萄 80斤/件</h4>
+											<p class='mui-ellipsis'>￥24.80元/斤</p>
+											<span class="old-price">￥24.80元/斤</span>
+											<p><img src="../images/protected-icon.png" class="protect-icon" /></p>
+										</div>
+										<div class="arrival-date">
+											<span class="mui-ellipsis">7月22号到货</span>
+											<p class="sell-out">已售<span class="mui-ellipsis">500</span>件</p>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div id="item2mobile" class="mui-slider-item mui-control-content">
+					<div id="scroll2">
+						<div class="mui-scroll">
+							<div class="mui-loading">
+								<div class="mui-spinner">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="item3mobile" class="mui-slider-item mui-control-content">
+					<div id="scroll3">
+						<div class="mui-scroll">
+							<div class="mui-loading">
+								<div class="mui-spinner">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="item4mobile" class="mui-slider-item mui-control-content">
+					<div id="scroll3">
+						<div class="mui-scroll">
+							<div class="mui-loading">
+								<div class="mui-spinner">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="fixed-bar">
+			<span class="mui-icon mui-icon-close close-btn"></span>
+			<div class="app-intro">
+				<img src="../images/logo.png" width="40" class="logo" />
+				<div class="introduce">
+					<p>打开农卖通APP 买卖更轻松</p>
+				</div>
+			</div>
+			<a href="https://api.mytim.cn/download.html" class="open-app">立即打开 &gt;&gt;</a>
+		</div>
+		<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item mui-active" href="#tabbar">
+				<span class="mui-icon mui-icon-home"></span>
+				<span class="mui-tab-label">首页</span>
+			</a>
+			<a class="mui-tab-item" href="#tabbar-with-chat">
+				<span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span class="mui-badge">2</span></span>
+				<span class="mui-tab-label">购物车</span>
+			</a>
+			<a class="mui-tab-item" href="#tabbar-with-contact">
+				<span class="mui-icon mui-icon-person"></span>
+				<span class="mui-tab-label">我的</span>
+			</a>
+		</nav>
+	</div>
+</body> 
+<script type="text/javascript">
+	var searchPage = mui.preload({
+		url:'search-page.html',
+		id:'search-page'
+	});
+	
+	mui('.topBar').on('tap','.searPage',function(){
+		mui.openWindow({
+			url:'search-page.html',
+			id:'search',
+			show:{
+				aniShow:'slide-in-bottom'
+			}
+		});
+	});
+
+	//轮播图自动播放
+	var slider = mui("#slider");
+	slider.slider({
+		interval: 3000
+	});
+	
+	//搜索栏背景渐变
+	(function(doc){
+		var oTop = document.querySelector('.changeBg');
+		if(doc.body.scrollTop>135){oTop.style.opacity=1;}
+		doc.addEventListener('drag',function(){
+			var opNum=document.body.scrollTop/135;
+			if(opNum >1){opNum=0.85};
+			oTop.style.opacity=opNum;
+		});
+		doc.addEventListener('scroll',function(){		
+			var opNum=document.body.scrollTop/135;
+			if(opNum >1){opNum=0.85};
+			oTop.style.opacity=opNum;
+		});
+	})(document);
+	
+	//商品列表滑动加载
+	(function($) {
+		$('.mui-scroll-wrapper').scroll({
+			indicators: true //是否显示滚动条
+		});
+		var html2 = '<ul class="mui-table-view"><li class="mui-table-view-cell mui-media"><a href="javascript:;"><img class="mui-media-object mui-pull-left" src="../images/product.png"><div class="mui-media-body"><h4 class="product-name">吐鲁番 无核紫葡萄 80斤/件</h4><p class="mui-ellipsis">￥24.80元/斤</p><span class="old-price">￥24.80元/斤</span><p><img src="../images/protected-icon.png" class="protect-icon" /></p></div><div class="arrival-date"><span class="mui-ellipsis">7月22号到货</span><p class="sell-out">已售<span class="mui-ellipsis">500</span>件</p></div></a></li></ul>';
+		var html3 = '<ul class="mui-table-view"><li class="mui-table-view-cell mui-media"><a href="javascript:;"><img class="mui-media-object mui-pull-left" src="../images/product.png"><div class="mui-media-body"><h4 class="product-name">吐鲁番 无核紫葡萄 80斤/件</h4><p class="mui-ellipsis">￥24.80元/斤</p><span class="old-price">￥24.80元/斤</span><p><img src="../images/protected-icon.png" class="protect-icon" /></p></div><div class="arrival-date"><span class="mui-ellipsis">7月22号到货</span><p class="sell-out">已售<span class="mui-ellipsis">500</span>件</p></div></a></li></ul>';
+		var item2 = document.getElementById('item2mobile');
+		var item3 = document.getElementById('item3mobile');
+		document.getElementById('slider').addEventListener('slide', function(e) {
+			if (e.detail.slideNumber === 1) {
+				if (item2.querySelector('.mui-loading')) {
+					setTimeout(function() {
+						item2.querySelector('.mui-scroll').innerHTML = html2;
+					}, 500);
+				}
+			} else if (e.detail.slideNumber === 2) {
+				if (item3.querySelector('.mui-loading')) {
+					setTimeout(function() {
+						item3.querySelector('.mui-scroll').innerHTML = html3;
+					}, 500);
+				}
+			}
+		});
+		var sliderSegmentedControl = document.getElementById('sliderSegmentedControl');
+		$('.mui-input-group').on('change', 'input', function() {
+			if (this.checked) {
+				sliderSegmentedControl.className = 'mui-slider-indicator mui-segmented-control mui-segmented-control-inverted mui-segmented-control-' + this.value;
+				//force repaint
+				sliderProgressBar.setAttribute('style', sliderProgressBar.getAttribute('style'));
+			}
+		});
+	})(mui);
+</script>
+
+</html>

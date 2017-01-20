@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="mytim">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>农卖通</title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link href="css/mui.indexedlist.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/icons-extra.css" />
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_njji2hmm417l23xr.css" />
+    <script src="lib/angular-1.5.5.js"></script>
+    <script src="lib/angular-ui-router-1b3.js"></script>
+    <script type="text/javascript" charset="utf-8">
+      	/*(function(doc,win){
+      		var docEle = doc.documentElement,
+      		resizeEvn = 'orientationchange' in window ? 'orientationchange' : 'resize',
+      		recalc = function(){
+      			var clientWidth = docEle.clientWidth;
+      			if(!clientWidth) return;
+      			if(clientWidth>=640){clientWidth=640;}
+      			docEle.style.fontSize = 20*(clientWidth / 640)+'px';
+      		}
+      		if(!doc.addEventListener) return;
+      		win.addEventListener(resizeEvn,recalc,false);
+      		doc.addEventListener('DOMContentLoaded',recalc,false);
+      	})(document,window);
+      	
+      	mui.plusReady(function() {
+			document.addEventListener("netchange", wainshow, false);
+		});*/
+	
+		function wainshow() {
+			if(plus.networkinfo.getCurrentType() == plus.networkinfo.CONNECTION_NONE) {
+				mui.toast("网络异常，请检查网络设置！");
+			}
+		}
+    </script>
+</head>
+<body ng-controller="mainCtrl">
+	
+	<ui-view></ui-view>
+	<script src="js/main.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/home.js"></script>
+	<script src="js/shopping.js"></script>
+	<script src="js/classinfo.js"></script>
+	<script src="js/mine.js"></script>
+	<script src="js/mui.indexedlist.js"></script>
+</body>
+</html>

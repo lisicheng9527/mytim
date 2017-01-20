@@ -1,0 +1,89 @@
+<div class="class-info pagein">
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-icon mui-icon-left-nav mui-pull-left" ng-click="back()"></a>
+		<!--<h1 class="mui-title"><input type="text" /></h1>-->
+		<span class="mui-icon mui-icon-search" ng-click="info.showSearch=true"></span>
+	</header>
+	<div class="loading"></div>
+	<nav class='tab'>
+		<a href="#source" class="tab-item">货源</a>
+		<a href="#sell-count" class="tab-item">销量</a>
+		<a href="#price" class="tab-item">价格</a>
+	</nav>
+
+	<div class="card-box">
+
+		<div class="card" ng-repeat="x in products">
+
+			<div class="img-box">
+				<a><img src='images/cbd.jpg' ng-src="{{x.thumbnail}}" alt="{{x.productName}}"></a>
+			</div>
+			<div class="text-box">
+				<p class="storeName"><span class='only'>[{{x.shopName}}] </span><!--售：{{x.soldCount}}--></p>
+				<p class="name mui-ellipsis">{{x.productName}}</p>
+				<p class="time"><span>起订量：</span>{{x.minoq}}</p>
+				<p class="new-price">{{x.strikePrice | currency:'￥'}} 元/{{x.unit}}</p>
+				<p class="old-price"><del class="b4">{{x.previousPrice | currency:'￥'}} 元/{{x.unit}}</del><span class="discount">已售：{{x.soldCount}} {{x.unit}}</span></p>
+			</div>
+
+			<span class="mark"></span>
+			<span class="from">{{sourceType(x.source)}}</span>
+			<a href="" class="add-car mui-icon-extra mui-icon-extra-cart"></a>
+
+		</div>
+		
+		<h4 class="mui-text-center" ng-click="loadMore()" ng-if="currentPage != pageNumber && pageNumber != 0" style="padding: 20px 0;">{{loadTxt}}</h4>
+		
+		
+	</div>
+	
+	<!--货源-->
+	<div id="source" class="mui-popover" style="width: 130px;height: 130px;">
+		<div class="mui-popover-arrow"></div>
+		<div class="mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell" ng-repeat="x in sortType.source">
+						<a ng-click="sort('r',$index)">{{x}}<span class="mui-icon mui-icon-checkmarkempty sortCheck" ng-if="sortCheck.r == $index"></span></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<!--销量-->
+	<div id="sell-count" class="mui-popover" style="width: 150px;height: 130px;">
+		<div class="mui-popover-arrow"></div>
+		<div class="mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell" ng-repeat="x in sortType.sell"><a ng-click="sort('s',$index)">{{x}}<span class="mui-icon mui-icon-checkmarkempty sortCheck" ng-if="sortCheck.s == $index"></span></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<!--价格-->
+	<div id="price" class="mui-popover" style="width: 150px;height: 130px;">
+		<div class="mui-popover-arrow"></div>
+		<div class="mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell" ng-repeat="x in sortType.price"><a ng-click="sort('p',$index)">{{x}}<span class="mui-icon mui-icon-checkmarkempty sortCheck" ng-if="sortCheck.p == $index"></span></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+</div>
+
+<!--loading-->
+<div class="mui-mask" ng-if="info.showLoading">
+	<div class="load-content"><img src="images/rings.svg" width="100%"/><p>加载中...</p></div>
+</div>
+
+<!--搜索-->
+<search></search>
+
+<!--消息提示-->
+<div class="tip-message" ng-class='{active:message.show}'>{{message.text}}</div>

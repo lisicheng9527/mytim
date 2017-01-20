@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="//at.alicdn.com/t/font_xdiezh8hveave7b9.css" />
+		<title>(预售) 长领花生-咸干</title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+
+			body{font-family: "microsoft yahei";max-width:640px;margin:0 auto;background-color: #EFF0F1;font-size: 14px;padding-top: 95px;padding-bottom: 50px;}
+			a{text-decoration: none;}
+			li{list-style-type: none;}
+			input{appearance: none;-webkit-appearance: none;}
+			header{
+				background-color: #fff;
+				min-height: 45px;
+				line-height: 45px;
+				font-size: 16px;
+				position: fixed;
+				top: 50px;
+				width: 100%;
+				max-width: 640px;
+				z-index: 1;
+				text-align: center;
+			}
+			
+			.goods-pic{
+				position: relative;
+			}
+			.goods-pic .tit{
+				width: 100%;
+				position: absolute;
+				bottom: 0;
+				text-align: center;
+				color: #fff;
+				padding: 5px 0;
+				background-color: rgba(0,0,0,.4);
+			}
+			.goods-pic img{
+				display: block;
+			}
+			.goods-info{
+				position: relative;
+				padding: 10px 15px;
+				background-color: #fff;
+			}
+			.goods-info .goods-name{
+				font-size: 16px;
+			}
+			.goods-info .sells{
+				position: absolute;
+				color: #919191;
+				right: 15px;
+				bottom: 10px;
+			}
+			.goods-info .tip{
+				margin-top: 3px;
+				color: #E3383C;
+			}
+			.goods-info .price{
+				margin-top: 6px;
+			}
+			.goods-info .new-price{
+				color: #E3383C;
+				margin-right: 15px;
+			}
+			.goods-info .old-price{
+				color: #919191;
+				text-decoration: line-through;
+			}
+			
+			.logistics{
+				margin-top: 10px;
+				overflow: hidden;
+				padding: 10px 15px;
+				background-color: #fff;
+			}
+			.logistics .tit{
+				color: #919191;
+				float: left;
+			}
+			.logistics .way{
+				float: left;
+			}
+			
+			.goods-number{
+				background-color: #fff;
+				margin-top: 10px;
+				padding: 10px 15px;
+				overflow: hidden;
+			}
+			.goods-number .mui-numbox{
+				float: left;
+			}
+			.goods-number .surplus{
+				float: left;
+				margin-top: 6px;
+				margin-left: 10px;
+				color: #919191;
+			}
+			
+			.fixed-bar{
+				width: 100%;
+				max-width: 640px;
+				max-height: 50px;
+				position: fixed;
+				top: 0;
+				color: #fff;
+				z-index: 1;
+				background-color: #666;
+				display: flex;
+			}
+			.fixed-bar .closeBar{
+				position: absolute;
+				width: 40px;
+				height: 100%;
+				left: 0;
+				top: 0;
+			}
+			.fixed-bar .app-intro{
+				overflow: hidden;
+				float: left;
+				width: 68%;
+				border-top: 1px solid #666;
+				padding-top: 5px;
+				padding-left: 40px;
+			}
+			.fixed-bar .logo{
+				float: left;
+				margin-right: 10px;
+			}
+			.fixed-bar .introduce{
+				float: left;
+				margin-top: 10px;
+			}
+			.fixed-bar p{
+				color: #fff;
+				font-size: 1rem;
+			}
+			.fixed-bar .open-app{
+				width: 32%;
+				text-align: center;
+				color: #fff;
+				font-size: 16px;
+				line-height: 50px;
+				border-top: 1px solid #E3383C;
+				background-color: #E3383C;
+			}
+			.close-btn{
+				position: absolute;
+				top: 18px;
+				left: 12px;
+				font-size: 16px;
+			}
+			
+			
+			.mui-bar-tab{
+				background-color: #F8F8F8;
+				box-shadow: none;
+				table-layout: auto;
+				-webkit-box-shadow: none;
+			}
+			.add-shopcar{
+				background-color: #F4A009;
+				color: #fff !important;
+			}
+			.place-order{
+				background-color: #FE4141;
+				color: #fff !important;
+			}
+			
+			.parameter{
+				background-color: #fff;
+				padding: 10px 15px;
+				margin: 10px 0;
+			}
+			.parameter h4{
+				font-weight: normal;
+				font-size: 16px;
+				margin: 0;
+			}
+			.parameter label{
+				background-color: #F3F3F3;
+				padding: 5px 12px;
+				display: inline-block;
+				border-radius: 5px;
+				color: #666;
+				margin: 15px 10px 0 0;
+			}
+		</style>
+		<script type="text/javascript">
+			(function(win,doc){
+				var docEle = doc.documentElement,
+				reEvent = 'orientation' in win ? 'orientation' : 'resize',
+				reCalc = function(){
+					var clientWidth = docEle.getBoundingClientRect().width || docEle.clientWidth;
+					if(clientWidth > 640)clientWidth=640;
+					docEle.style.fontSize = 20 * (clientWidth/640) +'px';
+				};
+				if(!doc.addEventListener)return;
+				win.addEventListener(reEvent,reCalc);
+				doc.addEventListener('DOMContentLoaded',reCalc);
+			})(window,document);
+		</script>
+	</head>
+	<body>
+		<header>商品详情</header>
+		<section>
+			<div class="goods-pic">
+				<img src="images/orange.jpg" width="100%" />
+			</div>
+			
+			<div class="goods-info">
+				<div class="goods-name">2016精品 梅州 早熟 富硒 白肉 蜜柚（金柚）</div>
+				<div class="tip">当日下单后隔天发货</div>
+				<div class="price"><span class="new-price">￥115.00元/件</span><span class="old-price">￥115.00元/件</span></div>
+				<div class="sells">已售2215斤</div>
+			</div>
+			
+			<div class="logistics">
+				<div class="tit">配送方式：</div>
+				<div class="way">
+					<p>同城配送</p>
+					<p>24小时内发货</p>
+				</div>
+			</div>
+			
+			<div class="goods-number">
+				<div class="mui-numbox">
+					<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+					<input class="mui-input-numbox" type="number" />
+					<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+				</div>
+				<div class="surplus">剩余可购买数量99件</div>
+			</div>
+			
+			<div class="parameter">
+				<h4>规格参数</h4>
+				<label>产地：福建省 福州市 市辖区</label>
+				<label>净重：20</label>
+				<label>起批量：1</label>
+				<label>单果重：不限</label>
+				<label>果肉颜色：不限</label>
+			</div>
+			
+			<div class="fixed-bar">
+				<span class="mui-icon mui-icon-close close-btn"></span>
+				<div class="closeBar"></div>
+				<div class="app-intro">
+					<img src="images/logo.png" width="40" class="logo" />
+					<div class="introduce">
+						<p>打开农卖通APP 买卖更轻松</p>
+					</div>
+				</div>
+				<a href="https://api.mytim.cn/download.html" class="open-app">立即打开 &gt;&gt;</a>
+			</div>
+		</section>
+		
+		<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item" id="collect" style="border-right: 1px solid #F0F0F0;">
+				<span class="mui-icon iconfont icon-huijijiayuanshoucangicon01" highlight="icon-shoucang"></span>
+				<span class="mui-tab-label">收藏</span>
+			</a>
+			<a class="mui-tab-item" href="#tabbar-with-chat" style="border-left: 1px solid #F0F0F0;">
+				<span class="mui-icon iconfont icon-dianpu"></span>
+				<span class="mui-tab-label">店铺</span>
+			</a>
+			<a class="mui-tab-item add-shopcar" href="#">加入购物车</a>
+			<a class="mui-tab-item place-order" href="#">&nbsp;&nbsp;立即下单&nbsp;&nbsp;</a>
+		</nav>
+		
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			(function(doc){
+				doc.querySelector('#collect').addEventListener('tap',function(event){
+					var obj = this.children[0],_this = this;
+					if(obj.classList.contains('icon-huijijiayuanshoucangicon01')){
+						obj.classList.remove('icon-huijijiayuanshoucangicon01');
+						obj.classList.add(obj.getAttribute('highlight'));
+						mui.toast('收藏成功');
+					}else{
+						obj.classList.remove(obj.getAttribute('highlight'));
+						obj.classList.add('icon-huijijiayuanshoucangicon01');
+						setTimeout(function(){
+							_this.classList.remove('mui-active');
+							mui.toast('取消收藏');
+						},100);
+					}
+					//this.children[0].setAttribute('class',this.children[0].getAttribute('class').replace('icon-huijijiayuanshoucangicon01',this.children[0].getAttribute('highlight')));
+				});
+			})(document);
+		</script>
+	</body>
+</html>

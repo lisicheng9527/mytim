@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+	<head>
+		<meta charset="utf-8">
+		<title>麦田计划</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.min.css">
+		<script src="lib/angular-1.5.5.js"></script>
+		<style>
+		 	.mui-content-padded {
+				padding: 10px;
+			}
+			body,body .mui-content {
+				background-color: #fff !important;
+			}
+			code {
+				word-wrap: break-word;
+				word-break: normal;
+				font-size: 90%;
+				color: #333;
+				border-radius: 4px;
+			}
+		</style>
+	</head>
+
+	<body ng-controller="Ctrl">
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">农卖通后台接口请求测试</h1>
+		</header>
+		<div style="overflow: auto;"><img src="https://www.mytimcdn.com/android/34/20161202/1480644666151.JPG/n33/n33" alt="" /></div>
+		<div class="mui-content">
+			<div class="mui-content-padded" style="padding-bottom: 50px;">
+				<p style="text-indent: 22px;">
+					麦田计划移动端接口功能网络请求测试。
+				</p>
+				<h4 class="mui-content-padded">发送请求：</h4>
+				<div class="mui-input-group">
+					<div class="mui-input-row">
+						<label>接口名称</label>
+						<input type="text" id="requestName" placeholder="接口名称" ng-model="reqName">
+					</div>
+					<div class="mui-input-row">
+						<label>接口参数</label>
+						<input type="text" id="requestParams" placeholder="接口参数（参数名称=值）" ng-model="requestParams">
+					</div>
+					<div class="mui-input-row">
+						<label>type:</label>
+						<select id="method" ng-model="typeWay" ng-init="typeWay='POST'">
+							<option value="{{x}}" ng-repeat="x in reqType">{{x}}</option>
+						</select>
+					</div>
+					<div class="mui-input-row">
+						<label>dataType:</label>
+						<select id="dataType" ng-model="dataWay" ng-init="dataWay='JSON'">
+							<option value="{{y}}" ng-repeat="y in dataType">{{y}}</option>
+						</select>
+					</div>
+					<div class="mui-button-row">
+						<button type="button" id="confirm" class="mui-btn mui-btn-primary" ng-click="sendReq()">发送请求</button>
+					</div>
+				</div>
+				<h4 class="mui-content-padded">获得响应：</h4>
+				<code id="response">{{response}}</code>
+			</div>
+		</div>
+		<script>
+		
+			var app = angular.module('myApp',[]);
+			
+			app.controller('Ctrl',['$scope','$http',function($scope,$http){
+
+				$scope.reqType = ['POST','GET'];
+				$scope.dataType = ['JSON','HTML','XML'];
+				$scope.reqName = 'index';
+				
+				//设置时间戳
+				function getNowFormatDate() {
+					var datetime = new Date();
+					var year = datetime.getFullYear();
+					var month = datetime.getMonth()+1; 
+					var date = datetime.getDate(); 
+					var hour = datetime.getHours(); 
+					var minutes = datetime.getMinutes(); 
+					var second = datetime.getSeconds();
+	
+					if(month<10){
+						month = "0" + month;
+					}
+					if(date<10){
+						date = "0" + date;
+					}
+					if(hour <10){
+						hour = "0" + hour;
+					}
+					if(minutes <10){
+						minutes = "0" + minutes;
+					}
+					if(second <10){
+						second = "0" + second ;
+					}
+					return year.toString()+month.toString()+date.toString()+hour.toString()+minutes.toString()+second.toString(); 
+				}
+				//设置请求唯一标识
+				function getUuid(){
+					var len=32;//32长度
+					var radix=16;//16进制
+					var chars='0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('');var uuid=[],i;radix=radix||chars.length;if(len){for(i=0;i<len;i++)uuid[i]=chars[0|Math.random()*radix];}else{var r;uuid[8]=uuid[13]=uuid[18]=uuid[23]='-';uuid[14]='4';for(i=0;i<36;i++){if(!uuid[i]){r=0|Math.random()*16;uuid[i]=chars[(i==19)?(r&0x3)|0x8:r];}}}
+					return uuid.join('');
+				}
+				
+				//发送请求
+				$scope.sendReq = function(){
+					var id = getUuid();
+					var times = getNowFormatDate();
+					var reqN = $scope.reqName;
+					var reqParams = $scope.requestParams || '';
+					//接口地址
+					$scope.url = 'https://api.mytim.cn/era.agent?i='+id+'&v=0.0.1&a=4&d=wap&s='+times+'&m='+reqN+'&'+reqParams+'';
+					//请求参数
+					/*var data = {
+						"i":getUuid(),
+						"v": "0.0.1",
+						"a": "4",
+						"d": "wap",
+						"s":getNowFormatDate(),
+						"m":$scope.reqName
+						//"data.productId":471
+					}*/
+
+					//发送请求
+					$http.get($scope.url).success(function (data) {
+		                $scope.response = '正在请求中...';
+		                if(data.code || data.code == 0){
+			                console.log(data);
+			                $scope.response = JSON.stringify(data);
+		                }else{
+		                	$scope.response = data.code +'----'+data.msg;
+		                }
+		           });
+				}
+			}]);
+			
+		</script>
+	</body>
+
+</html>

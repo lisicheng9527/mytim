@@ -1,0 +1,58 @@
+<div class="shopping-cart  pagein">
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-icon mui-icon-left-nav mui-pull-left noarrow"></a>
+		<h1 class="mui-title">购物车</h1>
+	</header>
+
+	<div class="product-list">
+		<div class="card-box">
+
+			<div class="card clear">
+				<div class="img-box" ng-click='goDetails(d.id)' >
+					<img src="images/shuijiao.jpg">
+				</div>
+				<div class="text-box">
+					<div class="box-title">
+						是是是
+					</div>
+					<div class="box clear">
+						<div class="ctrl clear">
+							<a href="javascript:;" class="aqq" ng-click='aqq($index)'>-</a>
+							<input type="number" value="2">
+							<a href="javascript:;" class="add" ng-click="add($index)">+</a>
+						</div>
+						<span class="price">￥123456</span>
+					</div>
+				</div>
+			</div>
+			
+			<div class="card clear">
+				<div class="img-box" ng-click='goDetails(d.id)' >
+					<img src="images/shuijiao.jpg">
+				</div>
+				<div class="text-box">
+					<div class="box-title">
+						是是是
+					</div>
+					<div class="box clear">
+						<div class="ctrl clear">
+							<a href="javascript:;" class="aqq" ng-click='aqq($index)'>-</a>
+							<input type="number" value="3">
+							<a href="javascript:;" class="add" ng-click="add($index)">+</a>
+						</div>
+						<span class="price">￥123456</span>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	
+	<div class="to-buy">
+		<div class="all">
+			<p>共12件商品</p>
+			<p>商品应付金额 120</p>
+		</div>
+		<div class="goto">确认订单</div>
+	</div>
+</div>
